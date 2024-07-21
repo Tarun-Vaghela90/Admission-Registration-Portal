@@ -15,7 +15,8 @@ export default function Navbar_dash() {
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><Link to="/dashboard" className="nav-link px-2 link-secondary">Dashboard</Link></li>
               <li><Link to="/applications" className="nav-link px-2 link-body-emphasis">Application</Link></li>
-              <li><Link to="#" className="nav-link px-2 link-body-emphasis">MyCollage</Link></li>
+              <li><Link to="/form" className="nav-link px-2 link-body-emphasis">Form </Link></li>
+              <li><Link to="#" className="nav-link px-2 link-body-emphasis">Collage Info </Link></li>
               <li><Link to="#" className="nav-link px-2 link-body-emphasis">Contact</Link></li>
             </ul>
 
@@ -30,7 +31,7 @@ export default function Navbar_dash() {
               <ul className="dropdown-menu text-small">
                 <li><Link className="dropdown-item" to="#">New project...</Link></li>
                 <li><Link className="dropdown-item" to="#">Settings</Link></li>
-                <li><Link className="dropdown-item" to="#">Profile</Link></li>
+                <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><Link className="dropdown-item" to="#">Sign out</Link></li>
               </ul>

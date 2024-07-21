@@ -14,12 +14,15 @@
     "apexcharts": "^3.50.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "react": "^18.3.1",
     "react-apexcharts": "^1.4.1",
     "react-bootstrap": "^2.10.4",
     "react-bootstrap-sidebar-menu": "^2.0.3",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.25.1"
+    "react-router-dom": "^6.25.1",
+    "react-to-print": "^2.15.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

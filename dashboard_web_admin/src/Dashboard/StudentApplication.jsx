@@ -77,7 +77,7 @@ const StudentApplication = () => {
   const handleCloseModal = () => setShowModal(false);
 
   return (
-    <div className='container rounded-5 bg-grey border pt-5'>
+    <div className='container rounded-5 bg-grey border pt-5 ' id='pdf-content'>
       <h6 className='text-body-tertiary'>List Of Student Applicate</h6>
       <Table striped bordered hover className='text-center '>
         <thead className='rounded'>
