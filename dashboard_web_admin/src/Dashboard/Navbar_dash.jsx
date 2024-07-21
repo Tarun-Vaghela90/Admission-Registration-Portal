@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../js/main';
-
+import './css/dashboard.css'
 export default function Navbar_dash() {
   return (
     <>
-      <header className="p-3 mb-3 border-bottom">
+      <header className="p-3 mb-3 border-bottom  ">
         <div className="container">
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <Link to="/" className="d-flex align-items-center mb-lg-0 link-body-emphasis text-decoration-none">

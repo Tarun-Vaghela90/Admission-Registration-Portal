@@ -8,7 +8,7 @@ import { Col, Row, Container } from 'react-bootstrap';
 const App = () => {
   return (
     <Router>
-      <Container fluid>
+      {/* <Container fluid> */}
           
           
             <Navbar_dash /> {/* Navbar component */}
@@ -18,7 +18,7 @@ const App = () => {
               <Route path="/applications" element={<StudentApplication />} />
             </Routes>
           
-      </Container>
+      {/* </Container> */}
     </Router>
   );
 };
