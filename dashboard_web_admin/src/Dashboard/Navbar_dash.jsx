@@ -12,12 +12,12 @@ export default function Navbar_dash() {
               <i className="text-primary fs-2 bi bi-braces"></i>
             </Link>
 
-            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 container justify-content-center mb-md-0">
               <li><Link to="/dashboard" className="nav-link px-2 link-secondary">Dashboard</Link></li>
               <li><Link to="/applications" className="nav-link px-2 link-body-emphasis">Application</Link></li>
-              <li><Link to="/form" className="nav-link px-2 link-body-emphasis">Form </Link></li>
-              <li><Link to="#" className="nav-link px-2 link-body-emphasis">Collage Info </Link></li>
-              <li><Link to="#" className="nav-link px-2 link-body-emphasis">Contact</Link></li>
+              <li><Link to="/Collageform" className="nav-link px-2 link-body-emphasis">University </Link></li>
+              <li><Link to="#" className="nav-link px-2 link-body-emphasis">Info </Link></li>
+              <li><Link to="contact" className="nav-link px-2 link-body-emphasis">Contact</Link></li>
             </ul>
 
             <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

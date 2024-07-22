@@ -1,7 +1,8 @@
 import React from 'react'
 import { Row,Col,} from 'react-bootstrap'
 import './css/dashboard.css'
-export default function ProfileDash() {
+import '../js/main'
+export default function Contact_Dash() {
   return (
     <>
     <div className="container   p-4  shadow-sm  rounded-4 pb-5   ">

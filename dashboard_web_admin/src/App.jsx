@@ -5,6 +5,8 @@ import Dashhome from './Dashboard/Dashhome';
 import StudentApplication from './Dashboard/StudentApplication'; // Import your StudentApplication component
 import ApplicationForm from './Dashboard/ApplicationForm';
 import ProfileDash from './Dashboard/ProfileDash';
+import Contact_Dash from './Dashboard/Contact_Dash';
+import './js/main'
 
 const App = () => {
   const componentRef = useRef();
@@ -21,9 +23,9 @@ const App = () => {
               <Route path="/" element={<Dashhome />} />
               <Route path="/dashboard" element={<Dashhome  />} />
               <Route path="/applications" element={<StudentApplication />} />
-              <Route path="/form" element={<ApplicationForm />} />
+              <Route path="/Collageform" element={<ApplicationForm />} />
+              <Route path="/contact" element={<Contact_Dash/>} />
               <Route path="/profile" element={<ProfileDash />} />
-              {/* <Route path="/collageform" element={< />} /> */}
             </Routes>
           
       {/* </Container> */}
