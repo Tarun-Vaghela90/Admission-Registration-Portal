@@ -15,11 +15,11 @@ export default function ProfileDash() {
 
     <form class="col  g-3">
     <div class="col-md-6 mb-2 ">
-    <label for="inputEmail4" class="form-label fw-bold">First</label>
+    <label for="inputEmail4" class="form-label fw-bold">First Name</label>
     <input type="input" class="form-control" id="inputFirst4"  value={"jscob"}/>
   </div>
   <div class="col-md-6 mb-2">
-    <label for="inputEmail4" class="form-label fw-bold">Last</label>
+    <label for="inputEmail4" class="form-label fw-bold">Last Name</label>
     <input type="input" class="form-control" id="inputLast4"value={"johnson"} />
   </div>
   <div class="col-md-6 mb-2">

@@ -20,7 +20,7 @@ const ApexChart = () => {
 
   return (
     <div className="chart-container  container w-100  shadow p-3 mb-5 rounded-4" >
-      <Chart options={options} series={series} type="bar" width="570" />
+      <Chart options={options} series={series} type="line" width="570" />
     </div>
   );
 };

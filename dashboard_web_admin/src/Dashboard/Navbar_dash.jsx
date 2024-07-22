@@ -20,9 +20,9 @@ export default function Navbar_dash() {
               <li><Link to="#" className="nav-link px-2 link-body-emphasis">Contact</Link></li>
             </ul>
 
-            {/* <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
               <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
-            </form> */}
+            </form>
 
             <div className="dropdown text-end">
               <Link to="#" className="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

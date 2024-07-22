@@ -23,6 +23,7 @@ const App = () => {
               <Route path="/applications" element={<StudentApplication />} />
               <Route path="/form" element={<ApplicationForm />} />
               <Route path="/profile" element={<ProfileDash />} />
+              {/* <Route path="/collageform" element={< />} /> */}
             </Routes>
           
       {/* </Container> */}
