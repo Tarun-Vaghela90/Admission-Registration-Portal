@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Pagination from 'react-bootstrap/Pagination';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Pagination from 'react-bootstrap/Pagination';
 import './css/dashboard.css';
 
 export default function Table_dash() {

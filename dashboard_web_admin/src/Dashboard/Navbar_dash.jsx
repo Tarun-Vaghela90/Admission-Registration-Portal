@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import '../js/main';
+// import '../js/main';
 import './css/dashboard.css'
 export default function Navbar_dash() {
   return (

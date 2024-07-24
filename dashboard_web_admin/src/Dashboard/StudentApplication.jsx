@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Button, Table, Modal } from 'react-bootstrap';
 import '../Dashboard/css/StudentApplication.css';
 
@@ -95,9 +95,9 @@ const StudentApplication = () => {
               <td>{app.name}</td>
               <td>{app.status}</td>
               <td>
-                <Button variant="info" onClick={() => handleView(app)}><i class="bi bi-person-bounding-box"></i></Button>
-                <Button variant="success" onClick={() => handleApprove(app.id)} className="ms-2"><i class="bi bi-check"></i></Button>
-                <Button variant="danger" onClick={() => handleReject(app.id)} className="ms-2"><i class="bi bi-x"></i></Button>
+                <Button variant="info" onClick={() => handleView(app)}><i className="bi bi-person-bounding-box"></i></Button>
+                <Button variant="success" onClick={() => handleApprove(app.id)} className="ms-2"><i className="bi bi-check"></i></Button>
+                <Button variant="danger" onClick={() => handleReject(app.id)} className="ms-2"><i className="bi bi-x"></i></Button>
               </td>
             </tr>
           ))}

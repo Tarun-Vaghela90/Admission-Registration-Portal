@@ -1,13 +1,8 @@
-import React from 'react'
+// import React from 'react'
 import '../js/main'
-import { Row,Col, ToastHeader, ToastBody, ToastContainer, } from 'react-bootstrap'
+import { Row,Col} from 'react-bootstrap'
 import './css/dashboard.css'
 
-import Alert from 'bootstrap/js/dist/alert';
-
-// or, specify which plugins you need:
-import { Tooltip, Toast, Popover } from 'bootstrap';
-import Toast_Dash from './Toast_Dash';
 
 
 export default function ApplicationForm() {
@@ -18,8 +13,8 @@ export default function ApplicationForm() {
    <>
     <div className="container   p-4  shadow-sm  rounded-4 pb-5   ">
             <h1 className='fs-2 text-start fw-bolder   text-secondary '>Collage Information</h1>
-            <div class="col-12 mt-3 text-end">
-    <button type="submit" class="btn btn-primary fw-bold">Sign Out</button>
+            <div className="col-12 mt-3 text-end">
+    <button type="submit" className="btn btn-primary fw-bold">Sign Out</button>
   </div>
         <Row className='mt-5 '> 
             <Col className=''>
@@ -28,54 +23,53 @@ export default function ApplicationForm() {
             <Col>
     
 
-    <form class="row  g-3">
-    <div class="col-md-6 mb-2 ">
-    <label for="inputEmail4" class="form-label fw-bold">University Name</label>
-    <input type="input" class="form-control" id="inputFirst4"  value={"jscob"}/>
+    <form className="row  g-3">
+    <div className="col-md-6 mb-2 ">
+    <label htmlFor="inputEmail4" className="form-label fw-bold">University Name</label>
+    <input type="input" className="form-control" id="inputFirst4"  value={"jscob"}/>
   </div>
   
-  <div class="col-md-6 mb-2">
-    <label for="inputEmail4" class="form-label fw-bold"> University Email</label>
-    <input type="email" class="form-control " id="inputEmail4" value={"jscob@gmail.com"} />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputEmail4" className="form-label fw-bold"> University Email</label>
+    <input type="email" className="form-control " id="inputEmail4" value={"jscob@gmail.com"} />
   </div>
-  <div class="col-md-6 mb-2">
-    <label for="inputEmail4" class="form-label fw-bold">Location</label>
-    <input type="input" class="form-control" id="inputLast4" placeholder='Enter Value' />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputEmail4" className="form-label fw-bold">Location</label>
+    <input type="input" className="form-control" id="inputLast4" placeholder='Enter Value' />
   </div>
-  <div class="col-md-6 mb-2">
-    <label for="inputEmail4" class="form-label fw-bold">Description</label>
-    <textarea type="textarea" class="form-control" id="inputLast4"  placeholder='Enter Value' />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputEmail4" className="form-label fw-bold">Description</label>
+    <textarea type="textarea" className="form-control" id="inputLast4"  placeholder='Enter Value' />
   </div>
   
   
-  <div class="col-md-6 mb-2">
-    <label for="inputPassword4" class="form-label fw-bold">Password</label>
-    <input type="password" class="form-control" id="inputPassword4" value={"jscob@gmail.com"} />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputPassword4" className="form-label fw-bold">Password</label>
+    <input type="password" className="form-control" id="inputPassword4" value={"jscob@gmail.com"} />
   </div>
-  <div class="col-md-6 mb-2">
-    <label for="inputPassword4" class="form-label fw-bold">Upload IMage</label>
-    <input type="file" class="form-control" id="inputimage5"  />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputPassword4" className="form-label fw-bold">Upload IMage</label>
+    <input type="file" className="form-control" id="inputimage5"  />
   </div>
-  <div class="accordion" id="accordionPanelsStayOpenExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+  <div className="accordion" id="accordionPanelsStayOpenExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header">
+      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         Courses
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
       <div className="  text-end ">
 
-      <button className='btn btn-primary m-2 '><i class="bi bi-plus-lg"></i></button>
+      <button className='btn btn-primary m-2 '><i className="bi bi-plus-lg"></i></button>
       </div>
-      <div class="accordion-body">
-        <span className='rounded-3 bg-primary p-2 text-light justify-content-center'  >hello <i class="bi bi-x-lg"></i></span>
+      <div className="accordion-body">
+        <span className='rounded-3 bg-primary p-2 text-light justify-content-center'  >hello <i className="bi bi-x-lg"></i></span>
       </div>
     </div>
   </div>
   </div>
 </form>
-{/* <Toast_Dash/> */}
             </Col>
         </Row>
 

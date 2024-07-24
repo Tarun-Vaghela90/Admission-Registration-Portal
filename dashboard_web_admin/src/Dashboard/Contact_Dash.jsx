@@ -1,8 +1,10 @@
-import React from 'react'
+// import React from 'react'
 import { Row,Col,} from 'react-bootstrap'
 import './css/dashboard.css'
-import '../js/main'
+// import '../js/main'
 export default function Contact_Dash() {
+
+
   return (
     <>
     <div className="container   p-4  shadow-sm  rounded-4 pb-5   ">
@@ -14,26 +16,26 @@ export default function Contact_Dash() {
             <Col>
     
 
-    <form class="col  g-3">
-    <div class="col-md-6 mb-2 ">
-    <label for="inputEmail4" class="form-label fw-bold">First Name</label>
-    <input type="input" class="form-control" id="inputFirst4"  value={"jscob"}/>
+    <form className="col  g-3">
+    <div className="col-md-6 mb-2 ">
+    <label htmlFor="inputEmail4" className="form-label fw-bold">First Name</label>
+    <input type="input" className="form-control" id="inputFirst4"  value={"jscob"}/>
   </div>
-  <div class="col-md-6 mb-2">
-    <label for="inputEmail4" class="form-label fw-bold">Last Name</label>
-    <input type="input" class="form-control" id="inputLast4"value={"johnson"} />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputEmail4" className="form-label fw-bold">Last Name</label>
+    <input type="input" className="form-control" id="inputLast4"value={"johnson"} />
   </div>
-  <div class="col-md-6 mb-2">
-    <label for="inputEmail4" class="form-label fw-bold">Email</label>
-    <input type="email" class="form-control " id="inputEmail4" value={"jscob@gmail.com"} />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputEmail4" className="form-label fw-bold">Email</label>
+    <input type="email" className="form-control " id="inputEmail4" value={"jscob@gmail.com"} />
   </div>
-  <div class="col-md-6 mb-2">
-    <label for="inputPassword4" class="form-label fw-bold">Password</label>
-    <input type="password" class="form-control" id="inputPassword4" value={"jscob@gmail.com"} />
+  <div className="col-md-6 mb-2">
+    <label htmlFor="inputPassword4" className="form-label fw-bold">Password</label>
+    <input type="password" className="form-control" id="inputPassword4" value={"jscob@gmail.com"} />
   </div>
   
-  <div class="col-12 mt-3">
-    <button type="submit" class="btn btn-primary fw-bold">Sign Out</button>
+  <div className="col-12 mt-3">
+    <button type="submit" className="btn btn-primary fw-bold">Sign Out</button>
   </div>
 </form>
             </Col>
