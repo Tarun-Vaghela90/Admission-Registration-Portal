@@ -1,4 +1,4 @@
-import React , { useRef } from 'react';
+// import 'React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar_dash from './Dashboard/Navbar_dash';
 import Dashhome from './Dashboard/Dashhome';
@@ -9,7 +9,6 @@ import Contact_Dash from './Dashboard/Contact_Dash';
 import './js/main'
 
 const App = () => {
-  const componentRef = useRef();
   return (
     <>
 
