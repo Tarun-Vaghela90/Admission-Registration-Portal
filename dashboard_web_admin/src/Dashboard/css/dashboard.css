@@ -33,12 +33,9 @@ table{
     border-radius: 20%;
 }
 .chart-container{
-      /* background-color: black; */
       border-style: solid;
       border-color: rgb(79, 82, 79);
       transition: ease-out;
-      /* transform: scale(1.02); */
       border-width: 3.8px;
-      /* position: relative; */
        background-color: whitesmoke;
     }

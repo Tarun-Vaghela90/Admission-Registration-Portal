@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Table, Modal } from 'react-bootstrap';
 import '../Dashboard/css/StudentApplication.css';
 
@@ -24,30 +24,10 @@ const initialData = [
     document: 'http://example.com/docs/doc2.pdf', // URL to document
     details: 'Details2'
   },
-  {
-    id: 3,
-    name: 'Jane Smith',
-    status: 'Pending',
-    profile: 'Profile2',
-    first: 'Jane',
-    last: 'Smith',
-    document: 'http://example.com/docs/doc2.pdf', // URL to document
-    details: 'Details2'
-  },
-  {
-    id: 4,
-    name: 'Jane Smith',
-    status: 'Pending',
-    profile: 'Profile',
-    first: 'Jane',
-    last: 'Smith',
-    document: 'http://example.com/docs/doc2.pdf', // URL to document
-    details: 'Details2'
-  },
   // Add more applications as needed
 ];
 
-const StudentApplication = () => {
+const Application = () => {
   const [applications, setApplications] = useState(initialData);
   const [selectedApplication, setSelectedApplication] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -77,27 +57,27 @@ const StudentApplication = () => {
   const handleCloseModal = () => setShowModal(false);
 
   return (
-    <div className='container rounded-5 bg-grey border pt-5 ' id='pdf-content'>
-      <h6 className='text-body-tertiary'>List Of Student Applicate</h6>
-      <Table striped bordered hover className='text-center '>
-        <thead className='rounded'>
-          <tr >
+    <div className='container rounded-5 bg-grey pt-2' id='pdf-content'>
+      <h6 className='text-success fs-4'>List of Student Applications</h6>
+      <Table  bordered hover className='table-centered '>
+        <thead>
+          <tr>
             <th>#</th>
             <th>Name</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {applications.map((app) => (
             <tr key={app.id}>
               <td>{app.id}</td>
               <td>{app.name}</td>
               <td>{app.status}</td>
-              <td>
+              <td className="actions">
                 <Button variant="info" onClick={() => handleView(app)}><i className="bi bi-person-bounding-box"></i></Button>
-                <Button variant="success" onClick={() => handleApprove(app.id)} className="ms-2"><i className="bi bi-check"></i></Button>
-                <Button variant="danger" onClick={() => handleReject(app.id)} className="ms-2"><i className="bi bi-x"></i></Button>
+                <Button variant="success" onClick={() => handleApprove(app.id)}><i className="bi bi-check"></i></Button>
+                <Button variant="danger" onClick={() => handleReject(app.id)}><i className="bi bi-x"></i></Button>
               </td>
             </tr>
           ))}
@@ -129,4 +109,4 @@ const StudentApplication = () => {
   );
 };
 
-export default StudentApplication;
+export default Application;

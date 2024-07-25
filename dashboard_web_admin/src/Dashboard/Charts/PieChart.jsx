@@ -22,8 +22,8 @@ const PieChart = () => {
   const series = [44, 55, 13, 43];
 
   return (
-    <div className="chart-container  container w-100  shadow p-3 mb-5 rounded-4  ">
-      <Chart options={options} series={series} type="pie" width="510" />
+    <div className="chart-container  container w-100  shadow p-3  rounded-4  ">
+      <Chart options={options} series={series} type="pie" width="500" />
     </div>
   );
 };

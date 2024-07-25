@@ -1,7 +1,19 @@
-.table {
-  margin-top: 1rem;
+.table-centered th,
+.table-centered td {
+  vertical-align: middle;
+  text-align: center;
+  background-color:whitesmoke ;
+
 }
 
-.modal-body p {
-  margin-bottom: 0.5rem;
+.table-centered .actions {
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color:whitesmoke ;
+}
+
+.table-centered .actions .btn {
+  margin: 0 5px;
+  
 }

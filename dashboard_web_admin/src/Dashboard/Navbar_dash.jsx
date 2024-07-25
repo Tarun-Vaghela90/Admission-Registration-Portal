@@ -5,17 +5,17 @@ import './css/dashboard.css'
 export default function Navbar_dash() {
   return (
     <>
-      <header className="p-3 mb-3 border-bottom  ">
-        <div className="container">
+      <header className="p-3 mb-3   ">
+        {/* <div className="container"> */}
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <Link to="/" className="d-flex align-items-center mb-lg-0 link-body-emphasis text-decoration-none">
               <i className="text-primary fs-2 bi bi-braces"></i>
             </Link>
 
-            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 container justify-content-center mb-md-0">
+            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2  justify-content-center mb-md-0">
               <li><Link to="/dashboard" className="nav-link px-2 link-secondary">Dashboard</Link></li>
               <li><Link to="/applications" className="nav-link px-2 link-body-emphasis">Application</Link></li>
-              <li><Link to="/Collageform" className="nav-link px-2 link-body-emphasis">University </Link></li>
+              <li><Link to="/University" className="nav-link px-2 link-body-emphasis">University </Link></li>
               <li><Link to="#" className="nav-link px-2 link-body-emphasis">Info </Link></li>
               <li><Link to="contact" className="nav-link px-2 link-body-emphasis">Contact</Link></li>
             </ul>
@@ -37,7 +37,7 @@ export default function Navbar_dash() {
               </ul>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </header>
     </>
   );

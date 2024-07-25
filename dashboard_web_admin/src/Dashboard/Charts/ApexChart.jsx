@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Chart from 'react-apexcharts';
 
 const ApexChart = () => {
@@ -19,8 +19,8 @@ const ApexChart = () => {
   ];
 
   return (
-    <div className="chart-container  container w-100  shadow p-3 mb-5 rounded-4" >
-      <Chart options={options} series={series} type="line" width="570" />
+    <div className="chart-container  container w-100  shadow p-3  rounded-4" >
+      <Chart options={options} series={series} type="line" width="560" />
     </div>
   );
 };
