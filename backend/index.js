@@ -17,7 +17,7 @@ app.use('/uploads', express.static('uploads'));
 require('dotenv').config();
 app.use(express.json());
 
-// Connect to MongoDB
+// Connect to MongoDB new
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
