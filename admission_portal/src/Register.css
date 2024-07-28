@@ -1,0 +1,65 @@
+/* src/assets/css/register.css */
+
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+
+.card-custom {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+h3.text-uppercase.fw-bold {
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+
+.custom-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+}
+
+.button-outline {
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.button-outline:hover {
+  background-color: #007bff;
+  color: #fff;
+}

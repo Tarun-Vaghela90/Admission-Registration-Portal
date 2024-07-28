@@ -1,0 +1,62 @@
+/* styles.css */
+
+/* Global background styles */
+body {
+  background-color: #c0c0c0; /* Light gray background */
+}
+
+.container {
+  background-color: #ffffff; /* White background for containers */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.card-custom {
+  background-color: #ffffff; /* White background for cards */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.login-container {
+  background-color: #f5f5f5; /* Lighter gray for login form */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.register-container {
+  background-color: #f5f5f5; /* Lighter gray for registration form */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.verify-container {
+  background-color: #f5f5f5; /* Lighter gray for verification form */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.merit-list-container {
+  background-color: #ffffff; /* White background for merit list page */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.user-profile-container {
+  background-color: #ffffff; /* White background for user profile page */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}

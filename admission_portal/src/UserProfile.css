@@ -1,0 +1,55 @@
+/* Custom styles for Profile page */
+.main-heading {
+    color: #007bff;
+  }
+  
+  .card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  .pdf-download {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pdf-generator-container .btn {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .pdf-generator-container .btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  

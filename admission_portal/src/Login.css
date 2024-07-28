@@ -1,0 +1,74 @@
+/* src/assets/css/login.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+
+.card-custom {
+  width: 100%;
+  max-width: 400px; /* Reduce max-width for a more compact card */
+  border: 1px solid #e0e0e0; /* Light border to connect with the background */
+  border-radius: 0.5rem; /* Slightly smaller border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.card-body {
+  padding: 1.5rem; /* Reduce padding for a more compact look */
+}
+
+.logo {
+  width: 80px; /* Reduce logo size */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #004085; /* Bootstrap primary color */
+  font-weight: bold;
+}
+
+.custom-btn {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1rem; /* Slightly reduce font size */
+  padding: 0.5rem 1rem; /* Reduce padding */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.button-outline {
+  border-color: #007bff;
+  color: #007bff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-outline:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.text-muted {
+  font-size: 0.9rem;
+}
+
+.mb-4, .mb-5, .mb-2, .mb-1 {
+  margin-bottom: 1rem; /* Consistent spacing */
+}
+
+.pb-1, .pb-4 {
+  padding-bottom: 1rem; /* Consistent spacing */
+}
+
+.pt-1 {
+  padding-top: 1rem; /* Consistent spacing */
+}

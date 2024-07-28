@@ -1,0 +1,25 @@
+/* Custom styles for Navbar */
+.navbar {
+  background-color: #2c249d;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #cccccc;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+}
+
+/* Ensure the main content does not get covered by the fixed navbar */
+body {
+  padding-top: 4rem; /* Adjust this value based on the height of your navbar */
+}

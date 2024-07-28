@@ -1,0 +1,33 @@
+/* DistrictWiseCollege.css */
+.main-heading {
+    color: #2c3e50;
+    font-weight: bold;
+  }
+  
+  .form-section {
+    margin-bottom: 20px;
+  }
+  
+  .custom-select {
+    margin-bottom: 20px;
+  }
+  
+  .college-card {
+    transition: transform 0.2s;
+  }
+  
+  .college-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .selected-college-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .selected-college-section .form-group {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
+  

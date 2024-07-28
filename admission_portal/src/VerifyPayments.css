@@ -1,0 +1,90 @@
+/* styles.css */
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark text color */
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  .card-custom {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .logo {
+    max-width: 150px;
+    height: auto;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #007bff; /* Blue navbar background */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  /* Form and input styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .custom-btn {
+    width: 100%;
+  }
+  
+  /* Table styles */
+  .table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  /* Status badge styles */
+  .status-paid {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .status-pending {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .status-not-paid {
+    color: red;
+    font-weight: bold;
+  }
+  
