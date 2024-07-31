@@ -38,7 +38,7 @@ app.use('/applications', applications);
 app.use('/students', students);
 app.use('/admins', admins);
 app.use('/notifications', notifications);
-
+require('./cronJobs');
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 });

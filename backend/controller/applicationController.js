@@ -1,5 +1,6 @@
 const Application = require('../models/Application');
 const Student = require('../models/Student');
+const moment = require('moment');
 
 // Create a new application
 const createApplication = async (req, res) => {
@@ -12,11 +13,17 @@ const createApplication = async (req, res) => {
             return res.status(404).json({ message: 'Student not found' });
         }
 
+        // Set the deadline to 30 days from the submission date
+        const submissionDate = new Date();
+        const deadline = moment(submissionDate).add(30, 'days').toDate();
+
         const newApplication = new Application({
             student: studentId,
             course,
             status,
-            documents
+            documents,
+            submissionDate,
+            deadline
         });
 
         await newApplication.save();

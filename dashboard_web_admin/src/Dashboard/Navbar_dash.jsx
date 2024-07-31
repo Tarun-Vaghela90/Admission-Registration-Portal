@@ -15,9 +15,9 @@ export default function Navbar_dash() {
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-3    justify-content-center mb-md-0">
               <li><Link to="/dashboard" className="nav-link px-3 link-secondary">Dashboard</Link></li>
               <li><Link to="/applications" className="nav-link px-3 link-body-emphasis ">Applications</Link></li>
-              <li><Link to="/University" className="nav-link px-3 link-body-emphasis">University </Link></li>
+              {/* <li><Link to="/University" className="nav-link px-3 link-body-emphasis">University </Link></li> */}
               <li><Link to="#" className="nav-link px-3 link-body-emphasis">Info </Link></li>
-              <li><Link to="contact" className="nav-link px-3 link-body-emphasis">Contact</Link></li>
+              {/* <li><Link to="contact" className="nav-link px-3 link-body-emphasis">Contact</Link></li> */}
             </ul>
 
             <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -29,7 +29,7 @@ export default function Navbar_dash() {
                 <img src={"https://github.com/mdo.png"} alt="mdo" width="32" height="32" className="rounded-circle" />
               </Link>
               <ul className="dropdown-menu text-small">
-                <li><Link className="dropdown-item" to="#">New project...</Link></li>
+                {/* <li><Link className="dropdown-item" to="#">New project...</Link></li> */}
                 <li><Link className="dropdown-item" to="#">Settings</Link></li>
                 <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
                 <li><hr className="dropdown-divider" /></li>

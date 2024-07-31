@@ -7,7 +7,8 @@ const applicationSchema = new Schema({
     status: { type: String, enum: ['pending', 'reviewed', 'accepted', 'rejected'], default: 'pending' },
     submissionDate: { type: Date, default: Date.now },
     reviewDate: Date,
-    comments: String
+    comments: String,
+    deadline: { type: Date, required: true }
 });
 
 module.exports = mongoose.model('Application', applicationSchema);
