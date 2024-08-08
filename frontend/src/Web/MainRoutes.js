@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
-import DistrictWiseCollege from './Pages/DistrictWiseCollege';
 import AboutPage from './Pages/AboutPage';
 import MainLayout from './MainLayout';
 
@@ -11,7 +10,6 @@ const MainRoutes = () => {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
-        <Route path="district-wise-college" element={<DistrictWiseCollege />} />
       </Route>
     </Routes>
   );

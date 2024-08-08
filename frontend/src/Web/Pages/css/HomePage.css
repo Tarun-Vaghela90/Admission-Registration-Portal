@@ -1,56 +1,29 @@
-/* HomePage.css */
-.main-heading {
-  color: #2c3e50;
-  font-weight: bold;
-}
-
-.intro-paragraph {
-  font-size: 1.2em;
-}
-
-.news-section,
-.intro-section,
-.activity-section,
-.features-section,
-.usage-section,
-.help-section {
-  margin-bottom: 40px;
-}
-
-.section-heading {
-  color: #007bff;
-  font-weight: bold;
-}
-
-.list-group-item {
-  font-size: 1em;
-}
-
-.feature-card {
-  margin-bottom: 20px;
-  transition: transform 0.2s;
-}
-
-.feature-card:hover {
-  transform: scale(1.05);
-}
-
-.usage-link {
-  display: block;
-  margin: 10px 0;
-}
-
-.help-text {
-  font-size: 1.1em;
-}
-
-.intro-text,
-.usage-text {
-  text-align: center;
-  font-size: 1.1em;
-}
-
-.activity-section .btn {
-  font-size: 1.1em;
-  padding: 10px 20px;
-}
+/* Hide the scrollbar but keep the scroll functionality */
+.scroll-container {
+    max-height: 400px; /* Adjust this height as needed */
+    overflow-y: scroll;
+    padding-right: 15px; /* Add padding to prevent content cutoff */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .scroll-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Additional styles to make sure the content is centered below the navbar */
+  .container {
+    margin-top: 60px; /* Adjust depending on your navbar height */
+  }
+  
+  .CollageImage {
+    max-height: 280px;
+    max-width: 500px; 
+    object-fit: cover;
+  }
+  
