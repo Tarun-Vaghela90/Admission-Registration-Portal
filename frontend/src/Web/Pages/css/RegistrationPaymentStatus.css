@@ -1,0 +1,42 @@
+/* src/assets/css/RegistrationPaymentStatus.css */
+
+.container {
+    padding: 2rem;
+    background-color: #f8f9fa;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .table {
+    margin-top: 2rem;
+  }
+  
+  .thead-custom {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.2);
+  }
+  
+  .badge.bg-success {
+    background-color: #28a745;
+  }
+  
+  .badge.bg-warning {
+    background-color: #ffc107;
+  }
+  

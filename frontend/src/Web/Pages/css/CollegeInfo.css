@@ -1,0 +1,44 @@
+.college-info-card {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .college-info-card .card-img-top {
+    height: 300px; /* Adjust height as needed */
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .college-info-card .card-body {
+    padding: 20px;
+  }
+  
+  .college-info-card .card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .college-info-card .card-text {
+    font-size: 18px;
+  }
+  /* Custom styles for CollegeInfo component */
+.college-info-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .college-info-card .card-title {
+    font-size: 2rem;
+    color: #343a40;
+  }
+  
+  .college-info-card .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
