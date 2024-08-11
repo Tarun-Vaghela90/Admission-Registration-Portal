@@ -10,7 +10,7 @@ const App = () => {
     <div className='root'>
       <Router>
         <Routes>
-          <Route path="/web/*" element={<MainRoutes />} />
+          <Route path="/*" element={<MainRoutes />} />
           <Route path="/admin/*" element={<AdminRoutes />} />
         </Routes>
       </Router>
