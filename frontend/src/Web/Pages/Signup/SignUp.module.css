@@ -1,11 +1,11 @@
-.loginPage {
+.signupPage {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .loginContainer {
+  .signupContainer {
     width: 380px;
     padding: 30px;
     background-color: #ffffff;
@@ -36,8 +36,6 @@
   .formText {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 10px;
   }
   .formText a {
     color: #6a11cb;

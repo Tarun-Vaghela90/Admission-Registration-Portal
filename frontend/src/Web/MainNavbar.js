@@ -75,9 +75,9 @@ const Navbar = () => {
         <Link className="btn btn-outline-info mx-2" to="/signin">
           Sign In
         </Link>
-        <button className="btn btn-outline-info" type="submit">
+        <Link className="btn btn-outline-info" to="/signup">
           Sign Up
-        </button>
+        </Link>
         <img
                   src={"https://avatars.githubusercontent.com/u/59139915?v=4"}
                   alt="Avatar"
