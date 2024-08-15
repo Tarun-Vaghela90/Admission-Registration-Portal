@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require("../models/Users"); // Assuming '../models/User' is the path to your user schema
+const User = require("../models/extra/Users"); // Assuming '../models/User' is the path to your user schema
 const auth = require('../middleware/auth'); // Assuming '../middleware/auth' is the path to your JWT middleware
 
 // Sign up

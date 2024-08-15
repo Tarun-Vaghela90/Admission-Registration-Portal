@@ -7,7 +7,6 @@ const applications = require('./routes/Applications');
 const students = require('./routes/Students');
 const admins = require('./routes/Admins');
 const notifications = require('./routes/Notifications');
-
 const app = express();
 const port = 3000;
 
@@ -29,7 +28,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Define routes
 app.get('/', (req, res) => {
-    res.send('Hello World! This is the start of a new world');
+    res.send('Hello World! This is the start of a new world server is running');
 });
 
 app.use('/UploadsDocs', uploadDocument);
