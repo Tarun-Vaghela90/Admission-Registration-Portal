@@ -1,0 +1,44 @@
+.collageinfo-body {
+  background-color: #f8f9fa;
+}
+
+.carousel-inner {
+  width: 600px;
+  height: 600px;
+}
+
+
+.university-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+
+.map-container {
+  margin-top: 20px;
+}
+
+.map-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.map-embed iframe {
+  border-radius: 10px;
+}
+
+.course-pill {
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.course-pill:hover {
+  background-color: #0056b3;
+}
+
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+}

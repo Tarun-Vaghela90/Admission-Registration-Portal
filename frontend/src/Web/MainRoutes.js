@@ -5,6 +5,7 @@ import AboutPage from './Pages/AboutPage';
 import MainLayout from './MainLayout';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Signup/SignUp';
+import CollageInfo from './Pages/CollageInfo';
 
 const MainRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const MainRoutes = () => {
         <Route path="signin" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="CollageInfo" element={<CollageInfo />} />
       </Route>
     </Routes>
   );

@@ -26,4 +26,12 @@
     max-width: 500px; 
     object-fit: cover;
   }
-  
+  /* HomePage.css */
+
+.bg-gradient {
+  background: linear-gradient(to right, #d63f3f, #f0f0f0); /* White to light gray gradient */
+}
+
+.text-dark {
+  color: #343a40; /* Dark text color */
+}
