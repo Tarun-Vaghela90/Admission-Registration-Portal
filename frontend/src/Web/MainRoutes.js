@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/Signup/SignUp';
 import CollageInfo from './Pages/CollageInfo';
 import ContactUs from './Pages/ContactUs';
+import ApplyPage from './Pages/ApplyPage';
 
 const MainRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const MainRoutes = () => {
         <Route path="contactus" element={<ContactUs />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="CollageInfo" element={<CollageInfo />} />
+        <Route path="apply" element={<ApplyPage />} />
       </Route>
     </Routes>
   );

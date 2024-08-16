@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation,Link } from 'react-router-dom';
 
 export default function CollageInfo() {
   const location = useLocation();
@@ -32,7 +32,7 @@ export default function CollageInfo() {
           <h2 className="university-name mb-3">{card.title}</h2>
           <p><strong>Location:</strong> {card.location}</p>
           <p><strong>Description:</strong> {card.description}</p>
-          <a href="#apply" className="btn btn-primary mt-2">Apply Now</a>
+          <Link to="/apply" className="btn btn-primary mt-2">Apply Now</Link>
         </div>
       </div>
 
