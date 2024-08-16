@@ -21,7 +21,7 @@ const ContactUs = () => {
             <h4>For Non-Technical HelpLine</h4>
             <ul className="list-unstyled">
               <li><strong>Email:</strong> registration@gmail.com</li>
-              <li><strong>Jisan raja ansari:</strong> 00000000000</li>
+              <li><strong>Jackson Obama:</strong> 00000000000</li>
               <li><strong>Help Center Time:</strong> 11:00 AM to 05:00 PM (On Working Days)</li>
             </ul>
           </div>
