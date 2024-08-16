@@ -11,6 +11,7 @@ const ContactUs = () => {
             <ul className="list-unstyled">
               <li><strong>Tarun vaghela:</strong> 1122334455</li>
               <li><strong>Jaykumar amrutiya:</strong> 5566778899</li>
+              <li><strong>Jishanraja Ansari:</strong> 5566778899</li>
               <li><strong>Help Center Time:</strong> 10:30 AM to 6:30 PM (On Working Days)</li>
             </ul>
           </div>
