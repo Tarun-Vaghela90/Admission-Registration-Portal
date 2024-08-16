@@ -13,15 +13,15 @@ export default function CollageInfo() {
     <section className="collageinfo-body border border-3 p-3 rounded-3 bg-light">
       {/* Carousel and College Info */}
       <div className="d-flex flex-row align-items-start mt-2 p-2">
-        <div className="image-container rounded-3 overflow-hidden me-4">
+        <div className="image-container rounded-3 overflow-hidden me-4" style={{ width: '800px', height: '300px' }}>
           <div id="collageCarousel" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner" style={{ width: '800px', height: '300px' }}>
+            <div className="carousel-inner" style={{ width: '100%', height: '100%' }}>
               <div className="carousel-item active">
                 <img
-                  src="https://images.unsplash.com/photo-1638036380894-a444823e88d3?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  className="d-block custom-carousel-img"
+                  src={card.imageUrl}
+                  className="d-block w-100 h-100"
                   alt="Campus Life"
-                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>

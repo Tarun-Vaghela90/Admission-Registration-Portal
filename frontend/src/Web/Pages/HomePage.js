@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import collageImage from './image/collage.jpg';
 import './css/HomePage.css';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +34,7 @@ export default function HomePage() {
         { course: 'B.Sc', duration: '3 Years', fee: '₹60,000' },
         { course: 'M.Sc', duration: '2 Years', fee: '₹70,000' }
       ],
-      imageUrl: '/images/paruluniversity.jpg'
+      imageUrl: '/images/parul.jpg'
     },
     {
       title: 'Nirma University',
@@ -50,7 +49,7 @@ export default function HomePage() {
         { course: 'MBA', duration: '2 Years', fee: '₹3,00,000' },
         { course: 'PhD', duration: '3 Years', fee: '₹1,20,000' }
       ],
-      imageUrl: '/images/nirmauniversity.jpg'
+      imageUrl: '/images/nirma.jpg'
     },
     {
       title: 'L.D College of Engineering',
@@ -64,7 +63,7 @@ export default function HomePage() {
         { course: 'M.Tech', duration: '2 Years', fee: '₹1,50,000' },
         { course: 'Diploma', duration: '3 Years', fee: '₹50,000' }
       ],
-      imageUrl: '/images/ldcollegeofengineering.jpg'
+      imageUrl: '/images/LDCollage.jpg'
     }
   ];
   
@@ -91,7 +90,7 @@ export default function HomePage() {
               
               <div className="d-flex border p-1 rounded bg-light bg-gradient" style={{ maxWidth: "550px", width: "100%" }}>
                 <div className="flex-shrink-0" style={{ width: '30%' }}>
-                  <img src={'frontend\public\image\marwadiuniversity.jpg'} className="img-fluid rounded" alt="Collage" style={{ width: '100%', height: 'auto' }} />
+                  <img src={card.imageUrl} className="img-fluid rounded" alt="Collage" style={{ width: '100%', height: 'auto' }} />
                 </div>
                 <div className="d-flex flex-column justify-content-center p-2" style={{ flex: '1' }}>
                   <h5 className="text-dark mb-1">{card.title}</h5>
