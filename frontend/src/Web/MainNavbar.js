@@ -69,6 +69,11 @@ const Navbar = () => {
             Verify Payment
           </Link>
         </li>
+        <li className="nav-item">
+        <Link className="nav-link" to="/contactus">
+            ContactUs
+          </Link>
+        </li>
         
       </ul>
         
