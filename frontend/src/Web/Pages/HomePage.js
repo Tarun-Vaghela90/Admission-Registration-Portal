@@ -60,7 +60,7 @@ export default function HomePage() {
               
               <div className="d-flex border p-1 rounded bg-light bg-gradient" style={{ maxWidth: "550px", width: "100%" }}>
                 <div className="flex-shrink-0" style={{ width: '30%' }}>
-                  <img src={collageImage} className="img-fluid rounded" alt="Collage" style={{ width: '100%', height: 'auto' }} />
+                  <img src={'frontend\public\image\marwadiuniversity.jpg'} className="img-fluid rounded" alt="Collage" style={{ width: '100%', height: 'auto' }} />
                 </div>
                 <div className="d-flex flex-column justify-content-center p-2" style={{ flex: '1' }}>
                   <h5 className="text-dark mb-1">{card.title}</h5>
