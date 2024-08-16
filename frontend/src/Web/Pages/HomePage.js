@@ -19,7 +19,8 @@ export default function HomePage() {
         { course: 'B.Tech', duration: '4 Years', fee: '₹2,00,000' },
         { course: 'M.Com', duration: '2 Years', fee: '₹50,000' },
         { course: 'Diploma', duration: '3 Years', fee: '₹40,000' }
-      ]
+      ],
+      imageUrl: '/images/marwadiuniversity.jpg'
     },
     {
       title: 'Parul University',
@@ -33,10 +34,40 @@ export default function HomePage() {
         { course: 'MBA', duration: '2 Years', fee: '₹2,50,000' },
         { course: 'B.Sc', duration: '3 Years', fee: '₹60,000' },
         { course: 'M.Sc', duration: '2 Years', fee: '₹70,000' }
-      ]
+      ],
+      imageUrl: '/images/paruluniversity.jpg'
     },
-    // Add more card data as needed
+    {
+      title: 'Nirma University',
+      text: 'Explore the vast opportunities at Nirma University, where education meets innovation.',
+      updated: 'Last updated 10 mins ago',
+      location: 'Ahmedabad, Gujarat',
+      description: 'Nirma University offers a range of undergraduate, postgraduate, and doctoral programs. The university is known for its focus on research and holistic development of students.',
+      courses: ['B.Tech', 'M.Tech', 'MBA', 'PhD'],
+      fees: [
+        { course: 'B.Tech', duration: '4 Years', fee: '₹2,50,000' },
+        { course: 'M.Tech', duration: '2 Years', fee: '₹2,00,000' },
+        { course: 'MBA', duration: '2 Years', fee: '₹3,00,000' },
+        { course: 'PhD', duration: '3 Years', fee: '₹1,20,000' }
+      ],
+      imageUrl: '/images/nirmauniversity.jpg'
+    },
+    {
+      title: 'L.D College of Engineering',
+      text: 'Join L.D College of Engineering and build a strong foundation in engineering disciplines.',
+      updated: 'Last updated 15 mins ago',
+      location: 'Ahmedabad, Gujarat',
+      description: 'L.D College of Engineering is one of the oldest and most prestigious engineering institutions in Gujarat, known for producing industry-ready engineers with strong technical skills.',
+      courses: ['B.Tech', 'M.Tech', 'Diploma'],
+      fees: [
+        { course: 'B.Tech', duration: '4 Years', fee: '₹1,70,000' },
+        { course: 'M.Tech', duration: '2 Years', fee: '₹1,50,000' },
+        { course: 'Diploma', duration: '3 Years', fee: '₹50,000' }
+      ],
+      imageUrl: '/images/ldcollegeofengineering.jpg'
+    }
   ];
+  
 
   const filteredCards = cardData.filter(card =>
     card.title.toLowerCase().includes(searchTerm.toLowerCase())
