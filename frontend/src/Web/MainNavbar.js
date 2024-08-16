@@ -78,12 +78,12 @@ const Navbar = () => {
         <Link className="btn btn-outline-info" to="/signup">
           Sign Up
         </Link>
-        <img
+        {/* <img
                   src={"https://avatars.githubusercontent.com/u/59139915?v=4"}
                   alt="Avatar"
                   className="rounded-circle "
                   style={{ width: '30px', height: '30px', marginRight: '8px' }}
-                /> 
+                />  */}
     </div>
   </div>
 </nav>

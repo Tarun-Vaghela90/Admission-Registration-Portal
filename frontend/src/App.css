@@ -1,5 +1,6 @@
 body {
-  background-image: url('https://img.freepik.com/free-photo/free-time-students-bachelor-s-campus-life-rhythm-five-friendly-students-are-walking_8353-6408.jpg?t=st=1723404082~exp=1723407682~hmac=ab43dbe035530ec4289aae68442e4e1094f1a80e01e33b5b924648a3ed006ce8&w=996');
+  /* background-image: url('https://img.freepik.com/free-photo/free-time-students-bachelor-s-campus-life-rhythm-five-friendly-students-are-walking_8353-6408.jpg?t=st=1723404082~exp=1723407682~hmac=ab43dbe035530ec4289aae68442e4e1094f1a80e01e33b5b924648a3ed006ce8&w=996'); */
   background-size: cover;
   background-position: center;
+background-color: aquamarine;
 }
