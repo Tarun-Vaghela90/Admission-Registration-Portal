@@ -27,9 +27,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-      <div className="text-center mt-4">
-        <a href="#" className="btn btn-primary">For More GCAS HelpLine Numbers Click Here</a>
-      </div>
+      
     </div>
   );
 }
