@@ -3,8 +3,9 @@ The Admission Registration Portal is a user-friendly online platform designed to
 # Mern Stack
 #to run this project
 
-```md
+
 # Clone the project
+
 ```bash
 git clone https://github.com/Tarun-Vaghela90/Admission-Registration-Portal.git
 ```
@@ -35,5 +36,4 @@ npm run both
 ```
 
 This command will start both the backend and frontend servers simultaneously.
-```
 
