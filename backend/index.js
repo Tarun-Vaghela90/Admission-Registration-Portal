@@ -1,45 +1,22 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const multer = require('multer');
-const users = require('./routes/users');
-const uploadDocument = require('./routes/uploadDocument');
-const applications = require('./routes/Applications');
-const students = require('./routes/Students');
-const admins = require('./routes/Admins');
-const notifications = require('./routes/Notifications');
+const  express = require('express');
 const app = express();
 const port = 5000;
+const router = express.Router();
+const auth = require('./routes/auth')
+const cors = require('cors');
 
-app.use('/uploads', express.static('uploads'));
+app.use(cors());
+app.use(express.json()); 
+const mongoose = require('mongoose');
 
-// Load environment variables from .env file
-require('dotenv').config();
-app.use(express.json());
-
-// Connect to MongoDB new
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb://localhost:27017/admissionPortal', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-}).then(() => {
-    console.log('Connected to MongoDB');
-}).catch(err => {
-    console.error('Error connecting to MongoDB:', err.message);
-});
+}).then(() => console.log('Connected to MongoDB'))
+  .catch(error => console.log('Error connecting to MongoDB:', error));
 
-// Define routes
-app.get('/', (req, res) => {
-    res.send('Hello World! This is the start of a new world server is running');
-   console.log("connected backend");
-   
-});
+app.use("/auth",auth)
 
-app.use('/UploadsDocs', uploadDocument);
-app.use('/users', users);
-app.use('/applications', applications);
-app.use('/students', students);
-app.use('/admins', admins);
-app.use('/notifications', notifications);
-require('./cronJobs');
-app.listen(port, () => {
-    console.log(`http://localhost:${port}`);
-});
+app.listen(port,()=>{
+    console.log("server is started")
+})

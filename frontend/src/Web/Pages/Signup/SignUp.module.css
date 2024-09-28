@@ -1,48 +1,110 @@
 .signupPage {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .signupContainer {
-    width: 380px;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-  .title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #2575fc;
-    font-weight: bold;
-  }
-  .formControl {
-    border-radius: 20px;
-    padding: 12px 15px;
-  }
-  .btnPrimary {
-    width: 100%;
-    background-color: #6a11cb;
-    border: none;
-    padding: 10px;
-    border-radius: 20px;
-    font-weight: bold;
-  }
-  .btnPrimary:hover {
-    background-color: #2575fc;
-  }
-  .formText {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .formText a {
-    color: #6a11cb;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .formText a:hover {
-    color: #2575fc;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #D1E8FF, #A6C8E0);
+  padding: 20px;
+}
+
+.signupContainer {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 900px; /* Increased max width for horizontal layout */
+  transition: transform 0.3s ease;
+}
+
+.signupContainer:hover {
+  transform: scale(1.02);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4A90E2; /* Primary Color */
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between; /* Space out fields evenly */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column; /* Each field label/input is stacked vertically */
+  width: calc(50% - 10px); /* Adjust width to fit two fields in a row with spacing */
+  margin-bottom: 15px; /* Space between fields */
+}
+
+.formControl {
+  transition: border-color 0.3s, box-shadow 0.3s;
+  height: 40px; /* Set a uniform height */
+}
+
+.formControl:focus {
+  border-color: #4A90E2; /* Primary Color */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btnPrimary {
+  background-color: #FF6F61; /* Accent Color */
+  color: white;
+  border: none;
+  padding: 8px 30px; /* Adjusted padding to increase width */
+  border-radius: 25px; /* Keep the rounded corners */
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Full width of the form group */
+  height: 38px; /* Reduced height */
+}
+
+.btnPrimary:hover {
+  background-color: #E65C50; /* Darker shade of Coral on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.formText {
+  text-align: center;
+  margin-top: 20px; /* Adjust space above link */
+}
+
+.alreadyUser {
+  margin-top: 10px; /* Space above link */
+  font-size: 0.9em;
+  color: #4A90E2; /* Primary Color */
+}
+
+.formText a {
+  color: #4A90E2; /* Primary Color */
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.formText a:hover {
+  color: #3A74B5; /* Darker shade on hover */
+}
+
+/* Error messages styling */
+.error {
+  color: #E94E77; /* Error Color */
+  margin-top: 5px;
+  text-align: center;
+}
