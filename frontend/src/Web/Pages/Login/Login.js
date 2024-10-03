@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import axios
+import axios from 'axios';
 import styles from './Login.module.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contex/AuthProvider'; // Import the AuthContext
 
 const Login = () => {
-  const [email, setemail] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false); // To show loading state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  
+  const { login } = useContext(AuthContext); // Use the login function from context
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading while request is processed
+    setLoading(true);
 
     try {
       // Make an API call to the login endpoint
@@ -21,11 +24,10 @@ const Login = () => {
         password,
       });
 
-      // Check if login is successful based on API response
-      if (response.data.success) {
-        // Redirect to home page if successful
-        console.log("Login SuccessFull")
-        navigate('/');
+      // Check if login is successful and the token is present
+      if (response.data.success && response.data.authToken) {
+        login(response.data.authToken); // Use authToken instead of token
+        navigate('/'); // Redirect to home page
       } else {
         alert(response.data.message || 'Invalid credentials');
       }
@@ -33,7 +35,7 @@ const Login = () => {
       alert('An error occurred during login. Please try again.');
       console.error(error);
     } finally {
-      setLoading(false); // Stop loading when request is done
+      setLoading(false);
     }
   };
 
@@ -50,7 +52,7 @@ const Login = () => {
               id="email"
               placeholder="Enter your email"
               value={email}
-              onChange={(e) => setemail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-3">
