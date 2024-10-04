@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation,Link } from 'react-router-dom';
 
 export default function CollageInfo() {
   const location = useLocation();
@@ -24,7 +24,6 @@ export default function CollageInfo() {
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              {/* Add more images if needed */}
             </div>
           </div>
         </div>
@@ -33,7 +32,8 @@ export default function CollageInfo() {
           <h2 className="university-name mb-3">{card.title}</h2>
           <p><strong>Location:</strong> {card.location}</p>
           <p><strong>Description:</strong> {card.description}</p>
-          <Link to={{ pathname: "/apply", state: { card } }} className="btn btn-primary mt-2">Apply Now</Link>
+          <Link to="/apply" state={{ collegeName: card.title, courses: card.courses }} className="btn btn-primary mt-2">Apply Now</Link>
+
         </div>
       </div>
 

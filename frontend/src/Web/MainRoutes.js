@@ -8,6 +8,11 @@ import SignUp from './Pages/Signup/SignUp';
 import CollageInfo from './Pages/CollageInfo';
 import ContactUs from './Pages/ContactUs';
 import ApplyPage from './Pages/ApplyPage';
+import CounselingPage from './Pages/CounselingPage'
+import Scholarship from './Pages/Scholarship';
+import ApplicationPage from './Pages/ApplicationPage'
+import HowCanHelpYou from './Pages/HowCanHelpYou';
+import ProfilePage from './Pages/profile/ProfilePage';
 
 const MainRoutes = () => {
   return (
@@ -20,6 +25,12 @@ const MainRoutes = () => {
         <Route path="about" element={<AboutPage />} />
         <Route path="CollageInfo" element={<CollageInfo />} />
         <Route path="apply" element={<ApplyPage />} />
+        <Route path="scholarship" element={<Scholarship />} />
+        <Route path="CounselingPage" element={<CounselingPage />} />
+        <Route path="ApplicationPage" element={<ApplicationPage />} />
+        <Route path="HowCanHelp" element={<HowCanHelpYou />} />
+        <Route path="Profile" element={<ProfilePage />} />
+
       </Route>
     </Routes>
   );

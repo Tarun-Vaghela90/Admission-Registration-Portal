@@ -1,0 +1,148 @@
+/* src/Pages/CounselingPage.css */
+
+.counseling-page-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  /* Header Section */
+  .counseling-header {
+    background-color: #003366;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .counseling-header h1 {
+    color: #006666; /* Bold and color updated */
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .counseling-header p {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  /* Introduction Section */
+  .intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .intro-text {
+    flex: 1;
+  }
+  
+  .intro-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .intro-image {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .intro-image img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Services Section */
+  .counseling-services {
+    margin-top: 50px;
+  }
+  
+  .counseling-services h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .services-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .service-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #006666;
+  }
+  
+  .service-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* Call to Action Section */
+  .cta-section {
+    background-color: #006666;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .book-session-button {
+    background-color: #ff9900;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .book-session-button:hover {
+    background-color: #cc7a00;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .intro-section {
+      flex-direction: column;
+    }
+  
+    .intro-image {
+      padding-left: 0;
+      margin-top: 20px;
+    }
+  
+    .services-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  

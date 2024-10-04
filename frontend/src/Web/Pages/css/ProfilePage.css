@@ -1,0 +1,23 @@
+.profile-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .text-danger {
+    color: red;
+    text-align: center;
+  }
+  

@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
 
   // Function to log in and set the login state
   const login = (token) => {
-    localStorage.setItem('token', token);
+    localStorage.setItem('authToken', token);
     setIsLoggedIn(true);
   };
 

@@ -1,12 +1,15 @@
-// import React from 'react';
+import React from 'react';
 import Chart from 'react-apexcharts';
 
-const PieChart = () => {
+const PieChart = ({ totalApplications, acceptedApplications, rejectedApplications }) => {
+  // Calculate the number of rejected applications
+  const rejectedApplicationsCount = totalApplications - acceptedApplications;
+
   const options = {
     chart: {
       type: 'pie',
     },
-    labels: ['Apples', 'Oranges', 'Bananas', 'Grapes'],
+    labels: ['Accepted Applications', 'Rejected Applications'],
     responsive: [
       {
         breakpoint: 480,
@@ -19,10 +22,11 @@ const PieChart = () => {
     ],
   };
 
-  const series = [44, 55, 13, 43];
+  // Series data
+  const series = [acceptedApplications, rejectedApplicationsCount];
 
   return (
-    <div className="chart-container  container w-100  shadow p-3  rounded-4  ">
+    <div className="chart-container container w-100 shadow p-3 rounded-4">
       <Chart options={options} series={series} type="pie" width="500" />
     </div>
   );

@@ -1,0 +1,37 @@
+/* Hide the scrollbar but keep the scroll functionality */
+.scroll-container {
+    max-height: 400px; /* Adjust this height as needed */
+    overflow-y: scroll;
+    padding-right: 15px; /* Add padding to prevent content cutoff */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .scroll-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Additional styles to make sure the content is centered below the navbar */
+  .container {
+    margin-top: 60px; /* Adjust depending on your navbar height */
+  }
+  
+  .CollageImage {
+    max-height: 280px;
+    max-width: 500px; 
+    object-fit: cover;
+  }
+  /* HomePage.css */
+
+.bg-gradient {
+  background: linear-gradient(to right, #d63f3f, #f0f0f0); /* White to light gray gradient */
+}
+
+.text-dark {
+  color: #343a40; /* Dark text color */
+}

@@ -1,120 +1,128 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './css/ApplyPage.css'; // Import custom CSS for additional styling
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/ApplyPage.css'; 
 
 export default function ApplyPage() {
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const [fileErrors, setFileErrors] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Check login status
-  const [token, setToken] = useState(null); // Store login token
+  const location = useLocation();
+  const navigate = useNavigate(); // Initialize the navigate function
+  const { collegeName, courses } = location.state || {};
 
-  // Simulate checking for a login token on component mount
-  useEffect(() => {
-    const userToken = localStorage.getItem('authToken');
-    if (userToken) {
-      setIsLoggedIn(true);
-      setToken(userToken);
-    }
-  }, []);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    mobileNumber: '',
+    email: '',
+    courseName: '',
+    fileUpload: null,
+    gender: '',
+  });
 
-  // Handle file selection and validation
+  const authToken = localStorage.getItem('authToken'); // Get token from local storage
+
+  // Handle input change for text fields
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle file input change
   const handleFileChange = (e) => {
-    const files = Array.from(e.target.files); // Get selected files as an array
-    const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
-    const newFiles = [];
-    const errors = [];
-
-    // Validate file count
-    if (files.length > 3) {
-      setFileErrors(['You can only upload up to 3 files.']);
-      return;
-    }
-
-    // Validate each file
-    files.forEach((file) => {
-      if (!allowedTypes.includes(file.type)) {
-        errors.push(`${file.name}: Invalid file type. Only JPG, PNG, and PDF allowed.`);
-      } else if (file.size > 3 * 1024 * 1024) {
-        errors.push(`${file.name}: File is larger than 3MB.`);
-      } else {
-        newFiles.push(file); // Only add valid files
-      }
-    });
-
-    setFileErrors(errors); // Set errors if any
-    setSelectedFiles(newFiles); // Set valid files
+    setFormData((prevData) => ({
+      ...prevData,
+      fileUpload: e.target.files[0], // Only one file for now
+    }));
   };
 
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!isLoggedIn) {
-      alert('Please log in first to submit the application.');
-      return;
+    // Validate mobile number (max 10 digits)
+    const mobileNumberRegex = /^[0-9]{10}$/;
+    if (!mobileNumberRegex.test(formData.mobileNumber)) {
+      alert('Mobile number must be exactly 10 digits.');
+      return; // Stop form submission if mobile number is invalid
     }
 
-    if (selectedFiles.length === 0) {
-      alert('Please upload valid files.');
-      return;
+    // Check if the authToken is available
+    if (!authToken) {
+      alert('You must be logged in to submit the application.');
+      return; // Exit if not authenticated
     }
 
-    const formData = new FormData();
-    selectedFiles.forEach((file) => {
-      formData.append('files', file);
-    });
+    // Prepare form data for submission
+    const data = new FormData();
+    data.append('firstName', formData.firstName);
+    data.append('lastName', formData.lastName);
+    data.append('mobileNumber', formData.mobileNumber);
+    data.append('email', formData.email);
+    data.append('courseName', formData.courseName);
+    data.append('gender', formData.gender);
+    data.append('collegeName', collegeName); // Ensure collegeName is passed
+    if (formData.fileUpload) {
+      data.append('files', formData.fileUpload); // File upload
+    }
 
-    // Gather additional form data
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const mobileNumber = document.getElementById('mobileNumber').value;
-    const email = document.getElementById('email').value;
-    const courseName = document.getElementById('courseName').value;
-    const gender = document.getElementById('gender').value;
-    const deadline = document.getElementById('deadline').value; // Add deadline input
-
-    // Append additional form data to formData
-    formData.append('firstName', firstName);
-    formData.append('lastName', lastName);
-    formData.append('mobileNumber', mobileNumber);
-    formData.append('email', email);
-    formData.append('courseName', courseName);
-    formData.append('gender', gender);
-    formData.append('deadline', deadline); // Include deadline in submission
-    formData.append('status', 'pending'); // Set initial status
+    // Debugging: Log formData
+    console.log('Submitting the following data:', formData);
 
     try {
-      const response = await axios.post('https://your-backend-api.com/applications', formData, {
+      // Send POST request to API with form data
+      const response = await axios.post('http://localhost:5000/userApplication/apply', data, {
         headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'multipart/form-data', // Set Content-Type to multipart/form-data for file uploads
+          'AuthToken': authToken, // Send the token in headers
+          'Content-Type': 'multipart/form-data', // Required for file upload
         },
       });
 
-      if (response.status === 201) {
-        alert('Application submitted successfully!');
-        // Optionally clear form fields and files after successful submission
-        setSelectedFiles([]);
-        document.getElementById('applicationForm').reset();
-      } else {
-        alert('Failed to submit the application.');
-      }
+      // Handle success response
+      alert('Application submitted successfully!');
+      console.log(response.data);
+
+      // Redirect to home page after successful submission
+      navigate('/'); // Redirect to home page
     } catch (error) {
-      console.error('Error submitting the application:', error);
-      alert('An error occurred. Please try again.');
+      // Handle different error scenarios
+      if (error.response) {
+        // Server responded with a status other than 2xx
+        console.error('Error submitting application:', error.response.data);
+        alert(`Error: ${error.response.data.error || 'Error submitting application. Please try again.'}`);
+      } else if (error.request) {
+        // No response received from the server
+        console.error('Error submitting application: No response from server.');
+        alert('Error submitting application: No response from server.');
+      } else {
+        // Error setting up the request
+        console.error('Error submitting application:', error.message);
+        alert('Error submitting application. Please try again.');
+      }
     }
   };
 
   return (
     <div className="apply-page-container">
       <div className="container mt-5">
-        <h1 className="mb-4 text-center">Application Form</h1>
-        <form id="applicationForm" className="row g-4" onSubmit={handleSubmit}>
+        <h1 className="mb-4 text-center">Application Form for {collegeName}</h1>
+        <form className="row g-4" onSubmit={handleSubmit}>
+          
           {/* First Name */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
-              <input type="text" className="form-control" id="firstName" placeholder="First Name" required />
+              <input
+                type="text"
+                className="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
               <label htmlFor="firstName">First Name</label>
             </div>
           </div>
@@ -122,7 +130,16 @@ export default function ApplyPage() {
           {/* Last Name */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
-              <input type="text" className="form-control" id="lastName" placeholder="Last Name" required />
+              <input
+                type="text"
+                className="form-control"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
               <label htmlFor="lastName">Last Name</label>
             </div>
           </div>
@@ -130,7 +147,16 @@ export default function ApplyPage() {
           {/* Mobile Number */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
-              <input type="tel" className="form-control" id="mobileNumber" placeholder="Mobile Number" required />
+              <input
+                type="tel"
+                className="form-control"
+                id="mobileNumber"
+                name="mobileNumber"
+                placeholder="Mobile Number"
+                value={formData.mobileNumber}
+                onChange={handleChange}
+                required
+              />
               <label htmlFor="mobileNumber">Mobile Number</label>
             </div>
           </div>
@@ -138,61 +164,77 @@ export default function ApplyPage() {
           {/* Email */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
-              <input type="email" className="form-control" id="email" placeholder="Email" required />
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
               <label htmlFor="email">Email</label>
             </div>
           </div>
 
-          {/* Course Name (Select Dropdown) */}
+          {/* Course Name */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
-              <select id="courseName" className="form-select" required>
-                <option value="" disabled selected>Choose a Course</option>
-                <option value="btech">B.Tech</option>
-                <option value="mtech">M.Tech</option>
-                <option value="mba">MBA</option>
+              <select
+                id="courseName"
+                name="courseName"
+                className="form-select"
+                value={formData.courseName}
+                onChange={handleChange}
+                required
+              >
+                <option value="" disabled>Choose a Course</option>
+                {courses && courses.map((course, index) => (
+                  <option key={index} value={course}>{course}</option>
+                ))}
               </select>
               <label htmlFor="courseName">Course Name</label>
             </div>
           </div>
 
+          {/* File Upload */}
+          <div className="col-md-6">
+            <div className="form-floating mb-3">
+              <input
+                type="file"
+                className="form-control"
+                id="fileUpload"
+                name="fileUpload"
+                accept=".pdf,.doc,.docx"
+                onChange={handleFileChange}
+                required
+              />
+              <label htmlFor="fileUpload">Upload Supporting Documents (PDF/DOC)</label>
+            </div>
+          </div>
+
           {/* Gender */}
           <div className="col-md-6">
-            <div className="form-floating mb-3">
-              <select id="gender" className="form-select" required>
-                <option value="" disabled selected>Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
-              <label htmlFor="gender">Gender</label>
-            </div>
-          </div>
-
-          {/* Deadline */}
-          <div className="col-md-6">
-            <div className="form-floating mb-3">
-              <input type="date" className="form-control" id="deadline" required />
-              <label htmlFor="deadline">Application Deadline</label>
-            </div>
-          </div>
-
-          {/* File Upload */}
-          <div className="col-md-12">
-            <label htmlFor="fileUpload" className="form-label">Upload Documents (Max 3 files)</label>
-            <input type="file" className="form-control" id="fileUpload" multiple onChange={handleFileChange} />
-            {fileErrors.length > 0 && (
-              <div className="alert alert-danger mt-2">
-                {fileErrors.map((error, index) => (
-                  <p key={index}>{error}</p>
-                ))}
-              </div>
-            )}
+            <label htmlFor="gender" className="form-label">Gender</label>
+            <select
+              id="gender"
+              name="gender"
+              className="form-select"
+              value={formData.gender}
+              onChange={handleChange}
+              required
+            >
+              <option value="" disabled>Choose...</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
           </div>
 
           {/* Submit Button */}
           <div className="col-12">
-            <button type="submit" className="btn btn-primary">Submit Application</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
           </div>
         </form>
       </div>

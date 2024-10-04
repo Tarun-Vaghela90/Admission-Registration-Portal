@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './css/HomePage.css';
+import './css/CollegeDetails.css';
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
@@ -67,12 +67,13 @@ export default function HomePage() {
     }
   ];
   
-
   const filteredCards = cardData.filter(card =>
     card.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
   return (
     <div className=''>
+      {/* Search Bar */}
       <form action="" method="get" className='container d-flex justify-content-center mt-4 mb-4'>
         <input
           type="search"
@@ -83,11 +84,11 @@ export default function HomePage() {
         />
       </form>
 
+      {/* University Cards */}
       <div className="container d-flex justify-content-center">
         <div className="row w-100 text-dark">
           {filteredCards.map((card, index) => (
             <div className="col-12 mb-3 d-flex justify-content-center" key={index}>
-              
               <div className="d-flex border p-1 rounded bg-light bg-gradient" style={{ maxWidth: "550px", width: "100%" }}>
                 <div className="flex-shrink-0" style={{ width: '30%' }}>
                   <img src={card.imageUrl} className="img-fluid rounded" alt="Collage" style={{ width: '100%', height: 'auto' }} />
@@ -97,12 +98,12 @@ export default function HomePage() {
                   <p className="text-dark mb-1">{card.text}</p>
                   <small className="text-dark mb-2">{card.updated}</small>
                   <Link
-  className="btn btn-dark mt-auto align-self-end"
-  to="/CollageInfo"
-  state={{ card }}
->
-  Details
-</Link>
+                    className="btn btn-dark mt-auto align-self-end"
+                    to="/CollageInfo"
+                    state={{ card }}
+                  >
+                    Details
+                  </Link>
                 </div>
               </div>
             </div>

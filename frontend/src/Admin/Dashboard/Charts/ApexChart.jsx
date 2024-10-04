@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import Chart from 'react-apexcharts';
 
-const ApexChart = () => {
+const ApexChart = ({ data }) => {
   const options = {
     chart: {
       id: 'basic-bar',
@@ -11,7 +11,8 @@ const ApexChart = () => {
     },
   };
 
-  const series = [
+  // Check if data is defined and has series
+  const series = data && data.length > 0 ? data : [
     {
       name: 'Sales',
       data: [30, 40, 35, 50, 49, 60, 70],
@@ -19,7 +20,7 @@ const ApexChart = () => {
   ];
 
   return (
-    <div className="chart-container  container w-100  shadow p-3  rounded-4" >
+    <div className="chart-container container w-100 shadow p-3 rounded-4">
       <Chart options={options} series={series} type="line" width="560" />
     </div>
   );
