@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/ApplyPage.css'; 
+import './css/ApplyPage.css';
 
 export default function ApplyPage() {
   const location = useLocation();
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
   const { collegeName, courses } = location.state || {};
 
   const [formData, setFormData] = useState({
@@ -19,9 +19,8 @@ export default function ApplyPage() {
     gender: '',
   });
 
-  const authToken = localStorage.getItem('authToken'); // Get token from local storage
+  const authToken = localStorage.getItem('authToken');
 
-  // Handle input change for text fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -30,32 +29,29 @@ export default function ApplyPage() {
     }));
   };
 
-  // Handle file input change
   const handleFileChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
-      fileUpload: e.target.files[0], // Only one file for now
+      fileUpload: e.target.files[0],
     }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate mobile number (max 10 digits)
+    // Validate mobile number to be exactly 10 digits
     const mobileNumberRegex = /^[0-9]{10}$/;
     if (!mobileNumberRegex.test(formData.mobileNumber)) {
       alert('Mobile number must be exactly 10 digits.');
-      return; // Stop form submission if mobile number is invalid
+      return;
     }
 
-    // Check if the authToken is available
+    // Check if the user is authenticated
     if (!authToken) {
       alert('You must be logged in to submit the application.');
-      return; // Exit if not authenticated
+      return;
     }
 
-    // Prepare form data for submission
     const data = new FormData();
     data.append('firstName', formData.firstName);
     data.append('lastName', formData.lastName);
@@ -63,41 +59,32 @@ export default function ApplyPage() {
     data.append('email', formData.email);
     data.append('courseName', formData.courseName);
     data.append('gender', formData.gender);
-    data.append('collegeName', collegeName); // Ensure collegeName is passed
+    data.append('collegeName', collegeName);
     if (formData.fileUpload) {
-      data.append('files', formData.fileUpload); // File upload
+      data.append('files', formData.fileUpload);
     }
 
-    // Debugging: Log formData
-    console.log('Submitting the following data:', formData);
-
     try {
-      // Send POST request to API with form data
       const response = await axios.post('http://localhost:5000/userApplication/apply', data, {
         headers: {
-          'AuthToken': authToken, // Send the token in headers
-          'Content-Type': 'multipart/form-data', // Required for file upload
+          'authToken': authToken, // Use correct token header
+          'Content-Type': 'multipart/form-data',
         },
       });
 
-      // Handle success response
       alert('Application submitted successfully!');
       console.log(response.data);
 
-      // Redirect to home page after successful submission
-      navigate('/'); // Redirect to home page
+      // Redirect to MyCart with formData after successful submission
+      navigate('/mycart', { state: { formData } });
     } catch (error) {
-      // Handle different error scenarios
       if (error.response) {
-        // Server responded with a status other than 2xx
         console.error('Error submitting application:', error.response.data);
         alert(`Error: ${error.response.data.error || 'Error submitting application. Please try again.'}`);
       } else if (error.request) {
-        // No response received from the server
         console.error('Error submitting application: No response from server.');
         alert('Error submitting application: No response from server.');
       } else {
-        // Error setting up the request
         console.error('Error submitting application:', error.message);
         alert('Error submitting application. Please try again.');
       }
@@ -109,8 +96,6 @@ export default function ApplyPage() {
       <div className="container mt-5">
         <h1 className="mb-4 text-center">Application Form for {collegeName}</h1>
         <form className="row g-4" onSubmit={handleSubmit}>
-          
-          {/* First Name */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
               <input
@@ -127,7 +112,6 @@ export default function ApplyPage() {
             </div>
           </div>
 
-          {/* Last Name */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
               <input
@@ -144,7 +128,6 @@ export default function ApplyPage() {
             </div>
           </div>
 
-          {/* Mobile Number */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
               <input
@@ -161,7 +144,6 @@ export default function ApplyPage() {
             </div>
           </div>
 
-          {/* Email */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
               <input
@@ -178,7 +160,6 @@ export default function ApplyPage() {
             </div>
           </div>
 
-          {/* Course Name */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
               <select
@@ -198,7 +179,6 @@ export default function ApplyPage() {
             </div>
           </div>
 
-          {/* File Upload */}
           <div className="col-md-6">
             <div className="form-floating mb-3">
               <input
@@ -214,7 +194,6 @@ export default function ApplyPage() {
             </div>
           </div>
 
-          {/* Gender */}
           <div className="col-md-6">
             <label htmlFor="gender" className="form-label">Gender</label>
             <select
@@ -232,7 +211,6 @@ export default function ApplyPage() {
             </select>
           </div>
 
-          {/* Submit Button */}
           <div className="col-12">
             <button type="submit" className="btn btn-primary">Submit</button>
           </div>

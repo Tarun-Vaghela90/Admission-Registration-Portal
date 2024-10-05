@@ -6,6 +6,6 @@ const adminSchema = new mongoose.Schema({
   collegeName: { type: String, required: true }, // College associated with the admin
 });
 
-const Admin = mongoose.model('Admin', adminSchema);
+const Admin = mongoose.model('collageAdmin', adminSchema);
 
 module.exports = Admin;

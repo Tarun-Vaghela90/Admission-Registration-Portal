@@ -35,3 +35,23 @@
 .text-dark {
   color: #343a40; /* Dark text color */
 }
+.small-banner-container {
+  padding: 0; /* Remove padding */
+  margin: 0;  /* Remove margin */
+}
+.scroll-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.small-banner-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap; /* Prevents line breaks */
+}
+
+.latest-news-text {
+  white-space: nowrap; /* Ensures text stays on a single line */
+  width: 100%;
+  font-size: 16px; /* Adjust as needed */
+}

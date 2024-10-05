@@ -7,6 +7,7 @@ const ApplicationPage = () => {
   const [appliedColleges, setAppliedColleges] = useState([]);
   const [loading, setLoading] = useState(true); // To manage loading state
   const [error, setError] = useState(null); // To handle errors
+  const [approvedApplications, setApprovedApplications] = useState([]); // To store approved applications
 
   useEffect(() => {
     const fetchAppliedColleges = async () => {
@@ -30,6 +31,22 @@ const ApplicationPage = () => {
     fetchAppliedColleges(); // Call the function to fetch data
   }, []);
 
+  // Filter applications based on the deadline and status
+  const currentDate = new Date();
+  const filteredColleges = appliedColleges.filter(college => {
+    const submissionDate = new Date(college.submissionDate);
+    const deadlineDate = new Date(college.deadline); // Assuming each college object has a deadline field
+
+    // Include only applications that are still valid
+    return submissionDate <= currentDate && deadlineDate >= currentDate;
+  });
+
+  // Find approved applications to display alerts
+  useEffect(() => {
+    const approved = filteredColleges.filter(college => college.status === 'approved');
+    setApprovedApplications(approved);
+  }, [filteredColleges]);
+
   return (
     <div className="application-container">
       <h2>Colleges You Have Applied To</h2>
@@ -51,8 +68,8 @@ const ApplicationPage = () => {
             </tr>
           </thead>
           <tbody>
-            {appliedColleges.length > 0 ? (
-              appliedColleges.map((college, index) => (
+            {filteredColleges.length > 0 ? (
+              filteredColleges.map((college, index) => (
                 <tr key={college._id}> {/* Use the unique ID for the key */}
                   <td>{index + 1}</td>
                   <td>{college.firstName}</td>
@@ -70,6 +87,21 @@ const ApplicationPage = () => {
             )}
           </tbody>
         </table>
+      )}
+
+      {/* Display a confirmation message for approved applications */}
+      {approvedApplications.length > 0 && (
+        <div className="alert alert-success mt-4">
+          You have been approved for admission for the following applications:
+          <ul>
+            {approvedApplications.map((application, index) => (
+              <li key={index}>
+                <strong>First Name:</strong> {application.firstName} - <strong>Application:</strong> {application.courseName} at <strong>College:</strong> {application.collegeName} - <strong>Deadline:</strong> {new Date(application.deadline).toLocaleDateString()}
+              </li>
+            ))}
+          </ul>
+          Please confirm your admission by visiting the respective college.
+        </div>
       )}
     </div>
   );

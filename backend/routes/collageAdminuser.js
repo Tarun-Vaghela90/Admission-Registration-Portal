@@ -5,7 +5,7 @@ const Admin = require('../models/Admin');
 const adminAuth = require('../middleware/adminAuth');
 const router = express.Router();
 
-const JWT_SECRET = "Programmertarun";
+const JWT_SECRET = "collageAdmintarun";
 
 // Admin Signup
 router.post('/signup', async (req, res) => {

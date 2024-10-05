@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const Admin = require('../models/Admin');
 
 const adminAuth = async (req, res, next) => {
-  const token = req.header('auth-token');
-  const JWT_SECRET = "Programmertarun";
+  const token = req.header('authToken');
+  const JWT_SECRET = "collageAdmintarun";
 
   if (!token) {
     return res.status(401).json({ error: "Please authenticate using a valid token" });

@@ -13,6 +13,9 @@ import Scholarship from './Pages/Scholarship';
 import ApplicationPage from './Pages/ApplicationPage'
 import HowCanHelpYou from './Pages/HowCanHelpYou';
 import ProfilePage from './Pages/profile/ProfilePage';
+import MyCart from './Pages/Mycart';
+
+
 
 const MainRoutes = () => {
   return (
@@ -30,6 +33,7 @@ const MainRoutes = () => {
         <Route path="ApplicationPage" element={<ApplicationPage />} />
         <Route path="HowCanHelp" element={<HowCanHelpYou />} />
         <Route path="Profile" element={<ProfilePage />} />
+        <Route path="mycart" element={<MyCart />} />
 
       </Route>
     </Routes>

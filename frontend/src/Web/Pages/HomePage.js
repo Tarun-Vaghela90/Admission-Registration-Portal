@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './css/CollegeDetails.css';
+import './css/HomePage.css';
 import { Link } from 'react-router-dom';
+import { Carousel } from 'react-bootstrap';
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -73,6 +74,34 @@ export default function HomePage() {
 
   return (
     <div className=''>
+      {/* Small Banner Slider */}
+      <div className="small-banner-slider">
+        <div className="d-flex align-items-center justify-content-between bg-light small-banner-container">
+          <h6 className="bg-warning p-2">Latest News</h6>
+          <marquee className="latest-news-text">
+            Admission is open! Register now for 2024. Visit the portal for more details.
+          </marquee>
+        </div>
+      </div>
+
+      {/* Carousel Section */}
+      <Carousel className='mb-4' interval={2000}>
+        {cardData.map((card, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={card.imageUrl}
+              alt={card.title}
+              style={{ height: '500px', objectFit: 'cover' }}
+            />
+            <Carousel.Caption>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+
       {/* Search Bar */}
       <form action="" method="get" className='container d-flex justify-content-center mt-4 mb-4'>
         <input
@@ -91,7 +120,7 @@ export default function HomePage() {
             <div className="col-12 mb-3 d-flex justify-content-center" key={index}>
               <div className="d-flex border p-1 rounded bg-light bg-gradient" style={{ maxWidth: "550px", width: "100%" }}>
                 <div className="flex-shrink-0" style={{ width: '30%' }}>
-                  <img src={card.imageUrl} className="img-fluid rounded" alt="Collage" style={{ width: '100%', height: 'auto' }} />
+                  <img src={card.imageUrl} className="img-fluid rounded" alt="College" style={{ width: '100%', height: 'auto' }} />
                 </div>
                 <div className="d-flex flex-column justify-content-center p-2" style={{ flex: '1' }}>
                   <h5 className="text-dark mb-1">{card.title}</h5>

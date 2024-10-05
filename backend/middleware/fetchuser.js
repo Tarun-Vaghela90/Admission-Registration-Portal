@@ -1,8 +1,8 @@
 var jwt = require('jsonwebtoken');
 const fetchuser = (req, res, next) => {
   // Retrieve the JWT token from the request headers
-  const token = req.header('auth-token');
-  var JWT_SECRET = "Programmertarun";
+  const token = req.header('authToken');
+  var JWT_SECRET = "userTarun";
 
   if (!token) {
     return res.status(401).json({ error: "Please authenticate using a valid token" });
