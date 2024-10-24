@@ -65,6 +65,50 @@ export default function HomePage() {
         { course: 'Diploma', duration: '3 Years', fee: '₹50,000' }
       ],
       imageUrl: '/images/LDCollage.jpg'
+    },
+    {
+      title: 'Atmiya University',
+      text: 'Join Atmiya College of Engineering and build a strong foundation in engineering disciplines.',
+      updated: 'Last updated 15 mins ago',
+      location: 'Rajkot, Gujarat',
+      description: 'Recognised by the United Grants Commission, Atmiya University (AU) is a private institution of higher education in Rajkot, Gujarat. It was established by Sarvodaya Kelavni Samaj in 2018 under the Gujarat Private University Act 11.',
+      courses: ['B.Tech', 'M.Tech', 'Diploma'],
+      fees: [
+        { course: 'B.Tech', duration: '4 Years', fee: '₹1,70,000' },
+        { course: 'M.Tech', duration: '2 Years', fee: '₹1,50,000' },
+        { course: 'Diploma', duration: '3 Years', fee: '₹50,000' }
+      ],
+      imageUrl: '/images/atmiy.jpg'
+    }
+    ,
+    {
+      title: 'Darshan University',
+      text: 'Join Darshan College of Engineering and build a strong foundation in engineering disciplines.',
+      updated: 'Last updated 15 mins ago',
+      location: 'Rajkot, Gujarat',
+      description: 'Located in Rajkot, Gujarat, Darshan University was established as an engineering institute in 2009 and received the ‘University’ status in 2021 through an act by the Government of Gujarat. It is a UGC-recognised university and offers AICTE-approved courses in the streams of Engineering, Management, Humanities, Science, and Technology.',
+      courses: ['B.Tech', 'M.Tech', 'Diploma'],
+      fees: [
+        { course: 'B.Tech', duration: '4 Years', fee: '₹1,70,000' },
+        { course: 'M.Tech', duration: '2 Years', fee: '₹1,50,000' },
+        { course: 'Diploma', duration: '3 Years', fee: '₹50,000' }
+      ],
+      imageUrl: '/images/darshan.jpg'
+    }
+    ,
+    {
+      title: 'Silver Oak University',
+      text: 'Join Silver Oak College of Engineering and build a strong foundation in engineering disciplines.',
+      updated: 'Last updated 15 mins ago',
+      location: 'Ahmedabad, Gujarat',
+      description: 'Silver Oak University was established in 2009 under the Gujarat Private Universities Act and is approved by UGC. Being a state-private university, Silver Oak University Ahmedabad is a part of the Silver Oak Group of Institutes. Oak University, through many affiliated NBA-accredited colleges, offers UG, PG, diploma, PhD, and other courses to students across Management, Engineering, and several other streams. Silver Oak College is rated as three under the Engineering category by the Gujarat State Institutional Ratings Framework (GSIRF) for 2021.',
+      courses: ['B.Tech', 'M.Tech', 'Diploma'],
+      fees: [
+        { course: 'B.Tech', duration: '4 Years', fee: '₹1,70,000' },
+        { course: 'M.Tech', duration: '2 Years', fee: '₹1,50,000' },
+        { course: 'Diploma', duration: '3 Years', fee: '₹50,000' }
+      ],
+      imageUrl: '/images/silverOak.jpg'
     }
   ];
   

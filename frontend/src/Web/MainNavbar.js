@@ -1,9 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Web/Pages/contex/AuthProvider'; // Import the AuthContext
 
 const Navbar = () => {
-  const { isLoggedIn, logout } = useContext(AuthContext); // Get login state and logout function
+  const { logout } = useContext(AuthContext); // Get logout function from context
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Local state to track if the user is logged in
+
+  useEffect(() => {
+    // Check if 'authToken' exists in localStorage
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      setIsLoggedIn(true); // Set login state to true if token exists
+    } else {
+      setIsLoggedIn(false); // Set login state to false if no token
+    }
+  }, []);
 
   return (
     <>
@@ -32,7 +43,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/ApplicationPage">
-                Application
+                  Application
                 </Link>
               </li>
               <li className="nav-item">
@@ -42,7 +53,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/CounselingPage">
-                Counseling
+                  Counseling
                 </Link>
               </li>
               <li className="nav-item">
@@ -78,7 +89,14 @@ const Navbar = () => {
                 </Link>
               </>
             ) : (
-              <button className="btn btn-outline-danger" onClick={logout}>
+              <button
+                className="btn btn-outline-danger"
+                onClick={() => {
+                  logout(); // Call the logout function from AuthContext
+                  localStorage.removeItem('authToken'); // Remove token from localStorage
+                  setIsLoggedIn(false); // Update the login state
+                }}
+              >
                 Logout
               </button>
             )}

@@ -52,8 +52,8 @@ const AdminForm = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-      <div className="bg-white p-4 rounded shadow" style={{ width: '100%', maxWidth: '600px' }}>
+    <div className="container-l d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+      <div className="bg-info p-4 rounded shadow" style={{ width: '100%', maxWidth: '600px' }}>
         <h2 className="text-center">{isSignup ? 'Admin Signup' : 'Admin Login'}</h2>
         {message && <div className="alert alert-info">{message}</div>}
 

@@ -76,7 +76,7 @@ export default function ApplyPage() {
       console.log(response.data);
 
       // Redirect to MyCart with formData after successful submission
-      navigate('/mycart', { state: { formData } });
+      navigate('/payment', { state: { formData } });
     } catch (error) {
       if (error.response) {
         console.error('Error submitting application:', error.response.data);

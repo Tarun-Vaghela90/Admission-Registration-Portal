@@ -32,7 +32,7 @@ export default function MyCart() {
       ],
     });
 
-    doc.save('MyCart-Application.pdf');
+    doc.save('Applicationform.pdf');
   };
 
   return (
