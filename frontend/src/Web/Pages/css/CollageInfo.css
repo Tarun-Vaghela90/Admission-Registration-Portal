@@ -1,44 +1,36 @@
-.collageinfo-body {
+/* Custom hover effect for table rows */
+.hoverable-row:hover {
   background-color: #f8f9fa;
-}
-
-.carousel-inner {
-  width: 600px;
-  height: 600px;
-}
-
-
-.university-name {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #343a40;
-}
-
-
-.map-container {
-  margin-top: 20px;
-}
-
-.map-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.map-embed iframe {
-  border-radius: 10px;
-}
-
-.course-pill {
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+}
+
+/* Styling for the course pill elements */
+.course-pill {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .course-pill:hover {
-  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.table th, .table td {
-  text-align: center;
-  vertical-align: middle;
+/* Styling for the carousel images */
+.carousel-inner img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* Make the section's content responsive */
+.collageinfo-body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Make Apply Now button more prominent */
+.btn-primary {
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
 }

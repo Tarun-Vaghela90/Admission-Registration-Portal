@@ -1,23 +1,75 @@
+/* Full-page layout */
 .profile-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-  }
-  
-  .profile-details {
-    margin-top: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  .text-danger {
-    color: red;
-    text-align: center;
-  }
-  
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0); /* A subtle gradient for a clean background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Header section */
+.profile-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.profile-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Profile info */
+.profile-info {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-right: 20px;
+}
+
+.profile-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-right: 10px;
+}
+
+.profile-data {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+.alert {
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.text-muted {
+  font-size: 1.2rem;
+}
+
+/* Hover effect for profile rows */
+.profile-row:hover {
+  background-color: #f7f7f7;
+  padding-left: 10px;
+  transition: all 0.3s ease;
+}

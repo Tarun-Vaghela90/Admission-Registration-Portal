@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/HomePage.css';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-
+import './css/HomePage.css'
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState('');
 

@@ -5,6 +5,7 @@ import AdminRoutes from './Admin/AdminRoutes';
 import MainRoutes from './Web/MainRoutes';
 import './App.css';
 import AuthProvider from './Web/Pages/contex/AuthProvider';
+// import WebmasterRoutes from './Admin/WebmasterRoutes';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/*" element={<MainRoutes />} />
           <Route path="/admin/*" element={<AdminRoutes />} />
+          {/* <Route path="/admin/webmaster/*" element={<WebmasterRoutes />} /> */}
         </Routes>
       </Router>
       </AuthProvider>

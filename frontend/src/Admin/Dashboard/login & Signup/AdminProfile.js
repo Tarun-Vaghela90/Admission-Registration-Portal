@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, Form, Modal, Spinner } from 'react-bootstrap';
 import axios from 'axios';
-// import '../Dashboard/css/AdminProfile.css';
+import './AdminProfile.css'; // Ensure this CSS file is included for custom styling
 
 const AdminProfile = () => {
   const [admin, setAdmin] = useState(null);
@@ -55,7 +55,11 @@ const AdminProfile = () => {
   };
 
   if (loading) {
-    return <p>Loading profile...</p>;
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
   }
 
   if (error) {
@@ -63,12 +67,22 @@ const AdminProfile = () => {
   }
 
   return (
-    <div className='container rounded-5 bg-grey pt-2'>
-      <h2>Admin Profile</h2>
-      <p><strong>ID:</strong> {admin._id}</p>
-      <p><strong>Username:</strong> {admin.username}</p>
-      <p><strong>College Name:</strong> {admin.collegeName}</p>
-      <Button variant="info" onClick={handleEdit}>Edit Profile</Button>
+    <div className="container-fluid p-4">
+      <div className="row justify-content-center">
+        <div className="col-md-8 col-lg-6">
+          <div className="bg-white p-4 rounded-3 shadow-sm">
+            <h2 className="text-center text-primary mb-4">Admin Profile</h2>
+            <div className="profile-info mb-3">
+              <p><strong>ID:</strong> {admin._id}</p>
+              <p><strong>Username:</strong> {admin.username}</p>
+              <p><strong>College Name:</strong> {admin.collegeName}</p>
+            </div>
+            <div className="text-center">
+              <Button variant="info" onClick={handleEdit} className="btn-lg">Edit Profile</Button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Edit Profile Modal */}
       <Modal show={showModal} onHide={handleCloseModal}>
@@ -83,6 +97,7 @@ const AdminProfile = () => {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                className="rounded-3"
               />
             </Form.Group>
             {/* You can add more fields here, such as for password */}

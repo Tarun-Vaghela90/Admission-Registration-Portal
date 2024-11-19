@@ -1,0 +1,39 @@
+/* Reset default margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Main layout container */
+  .admin-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 180px; /* Reduced width for the sidebar */
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Fixed to the left */
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Sidebar is always on top */
+    padding-top: 20px;
+    overflow-y: auto; /* Scroll if content overflows */
+  }
+  
+  /* Content area */
+  .content-area {
+    margin-left: 180px; /* Adjusted for the new sidebar width */
+    padding: 20px;
+    width: calc(100% - 180px); /* Content area now takes up the remaining space */
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    flex-grow: 1; /* Ensures content takes remaining space */
+  }
+  

@@ -6,7 +6,8 @@ import Application from './Dashboard/Application';
 import AdminLayout from './AdminLayout';
 import AdminForm from './Dashboard/login & Signup/AdminForm';
 import AdminProfile from './Dashboard/login & Signup/AdminProfile';
-
+// import WebmasterDashboard from './WebMaster/WebmasterDashboard'
+// import CollegeFormPage from './WebMaster/Pages/CollegeFormPage';
 const AdminRoutes = () => {
   return (
     <Routes>
@@ -16,7 +17,10 @@ const AdminRoutes = () => {
         {/* <Route path="profile" element={<ProfileDash />} /> */}
         <Route path="login" element={<AdminForm />} />
         <Route path="Profile" element={<AdminProfile />} />
+        {/* <Route path="Webmaster" element={<WebmasterDashboard />} /> */}
+        {/* <Route path="/demo" element={<CollegeFormPage />} /> */}
       </Route>
+      
     </Routes>
   );
 };

@@ -1,21 +1,15 @@
-/* Ensure navbar doesn't overflow */
-.navbar {
-    overflow: hidden;
-  }
-  
-  /* Handle dropdown menu styling */
-  .navbar .dropdown-menu {
-    min-width: 150px; /* Adjust as needed */
-  }
-  
-  /* Optional: Adjust padding and margins */
-  .navbar .navbar-brand,
-  .navbar .nav-link,
-  .navbar .btn {
-    padding: 0.5rem 1rem; /* Adjust as needed */
-  }
-  
-  .navbar .dropdown-toggle {
-    padding: 0.5rem 1rem; /* Adjust as needed */
-  }
-  
+/* Remove hover effect on navbar links */
+.navbar-nav .nav-link {
+  transition: none !important; /* Disable transitions on hover */
+}
+
+.navbar-nav .nav-link:hover {
+  color: inherit !important; /* Keep the text color the same on hover */
+}
+
+/* Optional: Remove hover effect on buttons */
+.btn-outline-light:hover,
+.btn-outline-danger:hover {
+  background-color: transparent !important; /* Remove hover background color */
+  border-color: inherit !important; /* Maintain the same border color */
+}

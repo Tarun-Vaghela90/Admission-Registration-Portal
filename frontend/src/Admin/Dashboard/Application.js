@@ -104,7 +104,7 @@ const Application = () => {
   };
 
   return (
-    <div className='container rounded-5 bg-grey pt-2' id='pdf-content'>
+    <div className='container-fluid px-4 py-3' id='pdf-content'>
       <h6 className='text-success fs-4'>List of Student Applications</h6>
       <Button variant="success" onClick={handleDownloadExcel} className="mb-3">
         Download Applications as Excel 
@@ -114,7 +114,7 @@ const Application = () => {
       ) : error ? (
         <p className="text-danger">{error}</p>
       ) : (
-        <Table bordered hover className='table-centered'>
+        <Table bordered hover responsive className='table-centered'>
           <thead>
             <tr>
               <th>#</th>
@@ -147,7 +147,7 @@ const Application = () => {
       )}
 
       {selectedApplication && (
-        <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal show={showModal} onHide={handleCloseModal} size="lg">
           <Modal.Header closeButton>
             <Modal.Title>Application Details</Modal.Title>
           </Modal.Header>

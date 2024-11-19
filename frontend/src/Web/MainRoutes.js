@@ -22,6 +22,7 @@ const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
+        <Route path='/Home' element={<HomePage />} />
         <Route path="signin" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="contactus" element={<ContactUs />} />
@@ -29,9 +30,9 @@ const MainRoutes = () => {
         <Route path="CollageInfo" element={<CollageInfo />} />
         <Route path="apply" element={<ApplyPage />} />
         <Route path="scholarship" element={<Scholarship />} />
-        <Route path="CounselingPage" element={<CounselingPage />} />
-        <Route path="ApplicationPage" element={<ApplicationPage />} />
-        <Route path="HowCanHelp" element={<HowCanHelpYou />} />
+        <Route path="counseling" element={<CounselingPage />} />
+        <Route path="application" element={<ApplicationPage />} />
+        <Route path="faq" element={<HowCanHelpYou />} />
         <Route path="Profile" element={<ProfilePage />} />
         <Route path="payment" element={<MyCart />} />
 

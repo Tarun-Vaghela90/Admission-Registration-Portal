@@ -1,35 +1,56 @@
 import React from 'react';
+import { FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import './css/ContactUs.css'; // Custom CSS for styling
 
 const ContactUs = () => {
   return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">Contact Us</h2>
-      <div className="row">
-        <div className="col-md-6">
-          <div className="card p-3 mb-4">
-            <h4>For Technical HelpLine</h4>
-            <ul className="list-unstyled">
-              <li><strong>Tarun vaghela:</strong> 1122334455</li>
-              <li><strong>Jaykumar amrutiya:</strong> 5566778899</li>
-              <li><strong>Jishanraja Ansari:</strong> 5566778899</li>
-              <li><strong>Help Center Time:</strong> 10:30 AM to 6:30 PM (On Working Days)</li>
-            </ul>
-          </div>
+    <div className="contact-wrapper">
+      <h2 className="contact-heading">Contact Us</h2>
+      <div className="contact-cards">
+        {/* Technical HelpLine Card */}
+        <div className="contact-card">
+          <h4 className="contact-card-title">Technical Support</h4>
+          <ul className="contact-list">
+            <li>
+              <FaPhone className="contact-icon" />
+              <span>Tarun Vaghela: 1122334455</span>
+            </li>
+            <li>
+              <FaPhone className="contact-icon" />
+              <span>Jaykumar Amrutiya: 5566778899</span>
+            </li>
+            <li>
+              <FaPhone className="contact-icon" />
+              <span>Jishanraja Ansari: 5566778899</span>
+            </li>
+            <li>
+              <FaClock className="contact-icon" />
+              <span>10:30 AM - 6:30 PM (Mon - Fri)</span>
+            </li>
+          </ul>
         </div>
-        <div className="col-md-6">
-          <div className="card p-3 mb-4">
-            <h4>For Non-Technical HelpLine</h4>
-            <ul className="list-unstyled">
-              <li><strong>Email:</strong> registration@gmail.com</li>
-              <li><strong>Jackson Obama:</strong> 00000000000</li>
-              <li><strong>Help Center Time:</strong> 11:00 AM to 05:00 PM (On Working Days)</li>
-            </ul>
-          </div>
+
+        {/* Non-Technical HelpLine Card */}
+        <div className="contact-card">
+          <h4 className="contact-card-title">Non-Technical Support</h4>
+          <ul className="contact-list">
+            <li>
+              <FaEnvelope className="contact-icon" />
+              <span>Email: registration@gmail.com</span>
+            </li>
+            <li>
+              <FaPhone className="contact-icon" />
+              <span>Jackson Obama: 00000000000</span>
+            </li>
+            <li>
+              <FaClock className="contact-icon" />
+              <span>11:00 AM - 5:00 PM (Mon - Fri)</span>
+            </li>
+          </ul>
         </div>
       </div>
-      
     </div>
   );
-}
+};
 
 export default ContactUs;

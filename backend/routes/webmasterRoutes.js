@@ -1,107 +1,166 @@
 const express = require('express');
-const router = express.Router();
-const jwt = require('jsonwebtoken');
+const { Webmaster, College } = require('../models/Webmaster'); // Ensure this model file exists
 const bcrypt = require('bcryptjs');
-const Webmaster = require('../models/Webmaster');  
-const authWebmaster = require('../middleware/authWebmaster'); 
-const Application = require('../models/Application');
-const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+const fetchWebmaster = require('../middleware/fetchWebmaster');
+const router = express.Router();
 
-// Static JWT Secret
-const JWT_SECRET = 'webmastertarun'; 
+const JWT_SECRET = 'webmastertarun'; // JWT key mentioned directly here
 
-// Generate JWT Token
-const generateToken = (id) => {
-  return jwt.sign({ id }, JWT_SECRET, { expiresIn: '30d' });
-};
+// ROUTE 1: Webmaster Signup
+router.post('/signup', async (req, res) => {
+    const { name, email, password } = req.body;
+    try {
+        let webmaster = await Webmaster.findOne({ email });
+        if (webmaster) {
+            return res.status(400).json({ error: 'Webmaster already exists' });
+        }
 
-// @route   POST /api/webmasters/register
-// @desc    Register a new webmaster
-router.post('/register', async (req, res) => {
-  const { name, email, password } = req.body;
+        const salt = await bcrypt.genSalt(10);
+        const secPassword = await bcrypt.hash(password, salt);
 
-  try {
-    const webmasterExists = await Webmaster.findOne({ email });
+        webmaster = new Webmaster({
+            name,
+            email,
+            password: secPassword
+        });
 
-    if (webmasterExists) {
-      return res.status(400).json({ message: 'Webmaster already exists' });
+        await webmaster.save();
+
+        const data = {
+            webmaster: {
+                id: webmaster.id
+            }
+        };
+
+        const authToken = jwt.sign(data, JWT_SECRET);
+        res.json({ authToken });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Internal Server Error');
     }
-
-    const webmaster = new Webmaster({
-      name,
-      email,
-      password,
-    });
-
-    const savedWebmaster = await webmaster.save();
-
-    res.status(201).json({
-      _id: savedWebmaster._id,
-      name: savedWebmaster.name,
-      email: savedWebmaster.email,
-      role: savedWebmaster.role,
-      token: generateToken(savedWebmaster._id),
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
 });
 
-// @route   POST /api/webmasters/login
-// @desc    Authenticate webmaster & get token
+// ROUTE 2: Webmaster Login
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+    const { email, password } = req.body;
+    try {
+        const webmaster = await Webmaster.findOne({ email });
+        if (!webmaster) {
+            return res.status(400).json({ error: 'Invalid credentials' });
+        }
 
-  try {
-    const webmaster = await Webmaster.findOne({ email });
+        const passwordCompare = await bcrypt.compare(password, webmaster.password);
+        if (!passwordCompare) {
+            return res.status(400).json({ error: 'Invalid credentials' });
+        }
 
-    if (!webmaster) {
-      return res.status(404).json({ message: 'Webmaster not found' });
+        const data = {
+            webmaster: {
+                id: webmaster.id
+            }
+        };
+
+        const authToken = jwt.sign(data, JWT_SECRET);
+        res.json({ authToken });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Internal Server Error');
     }
-
-    const isMatch = await webmaster.matchPassword(password);
-
-    if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
-
-    res.json({
-      _id: webmaster._id,
-      name: webmaster.name,
-      email: webmaster.email,
-      role: webmaster.role,
-      token: generateToken(webmaster._id),
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
 });
 
-// @route   GET /api/webmasters/profile
-// @desc    Get webmaster profile
-// @access  Private (Only accessible to authenticated webmasters)
-router.get('/profile', authWebmaster, async (req, res) => {
-  res.json(req.webmaster);
+// ROUTE 3: Get Webmaster Profile (Protected)
+router.get('/profile', fetchWebmaster, async (req, res) => {
+    try {
+        const webmasterId = req.webmaster.id;
+        const webmaster = await Webmaster.findById(webmasterId).select('-password');
+        res.json(webmaster);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
-// @route   GET /api/webmasters/count
-// @desc    Get total count of users and applications
-// @access  Private (Only accessible by webmasters)
-router.get('/count', authWebmaster, async (req, res) => {
-  try {
-    const applicationCount = await Application.countDocuments({});
-    const userCount = await User.countDocuments({});
+// ROUTE 4: Create a New College (Protected)
+router.post('/college', fetchWebmaster, async (req, res) => {
+    try {
+        const { title, text, updated, location, description, courses, fees, imageUrl } = req.body;
+        const college = new College({
+            title,
+            text,
+            updated,
+            location,
+            description,
+            courses,
+            fees,
+            imageUrl
+        });
 
-    res.status(200).json({
-      applicationCount,
-      userCount
-    });
-  } catch (error) {
-    console.error('Error fetching counts:', error);
-    res.status(500).json({ message: 'Server error' });
-  }
+        const savedCollege = await college.save();
+        res.json(savedCollege);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// ROUTE 5: Get All Colleges
+router.get('/colleges', async (req, res) => {
+    try {
+        const colleges = await College.find();
+        res.json(colleges);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// ROUTE 6: Update College by ID (Protected)
+router.put('/college/:id', fetchWebmaster, async (req, res) => {
+    try {
+        const { title, text, updated, location, description, courses, fees, imageUrl } = req.body;
+        let college = await College.findById(req.params.id);
+
+        if (!college) {
+            return res.status(404).send('College not found');
+        }
+
+        const updatedCollege = {
+            title,
+            text,
+            updated,
+            location,
+            description,
+            courses,
+            fees,
+            imageUrl
+        };
+
+        college = await College.findByIdAndUpdate(req.params.id, { $set: updatedCollege }, { new: true });
+        res.json(college);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// ROUTE 7: Delete College by ID (Protected)
+router.delete('/college/:id', fetchWebmaster, async (req, res) => {
+    try {
+        const college = await College.findById(req.params.id);
+
+        if (!college) {
+            return res.status(404).send('College not found');
+        }
+
+        await College.findByIdAndDelete(req.params.id);
+        res.json({ success: 'College deleted successfully' });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 module.exports = router;
