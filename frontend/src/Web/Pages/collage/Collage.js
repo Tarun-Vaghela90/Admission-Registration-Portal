@@ -19,12 +19,7 @@ const Collage = () => {
             <label>Course/Program</label>
             <input type="text" placeholder="Enter course/program" />
           </div>
-          <div className="filter-option">
-            <label>Rating</label>
-            <div className="stars">
-              ★★★★☆
-            </div>
-          </div>
+          
           <button className="apply-btn">Apply Filter</button>
         </aside>
 
