@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button, Table, Modal } from 'react-bootstrap';
+import { Button, Table, Modal, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import axios from 'axios';
 import * as XLSX from 'xlsx'; // Import XLSX
 import '../Dashboard/css/StudentApplication.css';
@@ -16,7 +16,7 @@ const Application = () => {
       const authToken = localStorage.getItem('authToken');
       const response = await axios.get('http://localhost:5000/collageAdminApplication/applications', {
         headers: {
-          'AuthToken': authToken
+          'authToken': authToken // Use lowercase 'authToken' as per your backend
         },
       });
 
@@ -39,13 +39,15 @@ const Application = () => {
   };
 
   const handleApprove = async (id) => {
+    if (!window.confirm('Are you sure you want to approve this application?')) return;
+
     try {
       const authToken = localStorage.getItem('authToken');
       const response = await axios.put(`http://localhost:5000/collageAdminApplication/applications/${id}`, {
         status: 'approved',
       }, {
         headers: {
-          'AuthToken': authToken
+          'authToken': authToken
         },
       });
 
@@ -60,13 +62,15 @@ const Application = () => {
   };
 
   const handleReject = async (id) => {
+    if (!window.confirm('Are you sure you want to reject this application?')) return;
+
     try {
       const authToken = localStorage.getItem('authToken');
       const response = await axios.put(`http://localhost:5000/collageAdminApplication/applications/${id}`, {
         status: 'rejected',
       }, {
         headers: {
-          'AuthToken': authToken
+          'authToken': authToken
         },
       });
 
@@ -130,15 +134,29 @@ const Application = () => {
                 <td>{`${app.firstName} ${app.lastName}`}</td>
                 <td>{app.status}</td>
                 <td className="actions">
-                  <Button variant="info" onClick={() => handleView(app)}>
-                    <i className="bi bi-person-bounding-box"></i>
-                  </Button>
-                  <Button variant="success" onClick={() => handleApprove(app._id)}>
-                    <i className="bi bi-check"></i>
-                  </Button>
-                  <Button variant="danger" onClick={() => handleReject(app._id)}>
-                    <i className="bi bi-x"></i>
-                  </Button>
+                  <OverlayTrigger
+                    overlay={<Tooltip id={`tooltip-view-${index}`}>View Details</Tooltip>}
+                  >
+                    <Button variant="info" onClick={() => handleView(app)}>
+                      <i className="bi bi-person-bounding-box"></i>
+                    </Button>
+                  </OverlayTrigger>
+
+                  <OverlayTrigger
+                    overlay={<Tooltip id={`tooltip-approve-${index}`}>Approve</Tooltip>}
+                  >
+                    <Button variant="success" onClick={() => handleApprove(app._id)}>
+                      <i className="bi bi-check"></i>
+                    </Button>
+                  </OverlayTrigger>
+
+                  <OverlayTrigger
+                    overlay={<Tooltip id={`tooltip-reject-${index}`}>Reject</Tooltip>}
+                  >
+                    <Button variant="danger" onClick={() => handleReject(app._id)}>
+                      <i className="bi bi-x"></i>
+                    </Button>
+                  </OverlayTrigger>
                 </td>
               </tr>
             ))}

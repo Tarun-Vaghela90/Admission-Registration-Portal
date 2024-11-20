@@ -32,7 +32,7 @@ export default function ApplyPage() {
   const handleFileChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
-      fileUpload: e.target.files[0],
+      fileUpload: e.target.files,
     }));
   };
 
@@ -60,14 +60,18 @@ export default function ApplyPage() {
     data.append('courseName', formData.courseName);
     data.append('gender', formData.gender);
     data.append('collegeName', collegeName);
+
+    // Append all selected files to FormData
     if (formData.fileUpload) {
-      data.append('files', formData.fileUpload);
+      Array.from(formData.fileUpload).forEach(file => {
+        data.append('files', file);
+      });
     }
 
     try {
       const response = await axios.post('http://localhost:5000/userApplication/apply', data, {
         headers: {
-          'authToken': authToken, // Use correct token header
+          'authToken': authToken,
           'Content-Type': 'multipart/form-data',
         },
       });
@@ -75,7 +79,7 @@ export default function ApplyPage() {
       alert('Application submitted successfully!');
       console.log(response.data);
 
-      // Redirect to MyCart with formData after successful submission
+      // Redirect to payment page with formData after successful submission
       navigate('/payment', { state: { formData } });
     } catch (error) {
       if (error.response) {
@@ -186,11 +190,12 @@ export default function ApplyPage() {
                 className="form-control"
                 id="fileUpload"
                 name="fileUpload"
-                accept=".pdf,.doc,.docx"
+                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
                 onChange={handleFileChange}
+                multiple
                 required
               />
-              <label htmlFor="fileUpload">Upload Supporting Documents (PDF/DOC)</label>
+              <label htmlFor="fileUpload">Upload Supporting Documents (PDF/DOC/Image)</label>
             </div>
           </div>
 

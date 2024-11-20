@@ -1,0 +1,416 @@
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('Man_with_Book_Hero_Section.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    margin-left: 50px; /* Adjust this value to change the spacing from the left */
+    color: white;
+    text-align: left;
+    max-width: 600px; /* Set a maximum width for the content */
+  }
+  
+  h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .apply-btn {
+    padding: 12px 25px;
+    background-color: #3498db; /* Blue background */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Light shadow for the "popup" effect */
+  }
+  
+  .apply-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+    transform: translateY(-3px); /* Move the button up slightly */
+  }
+  
+  .apply-btn:active {
+    transform: translateY(0); /* Reset the button position when clicked */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Return to the original shadow */
+  }
+
+  
+/* main features */
+.main-feature-section {
+    display: flex;
+    justify-content: space-around;  /* Distributes items evenly across the screen */
+    align-items: center;           /* Centers items vertically */
+    min-height: 200px;             /* Minimum height of 200px */
+    height: auto;                  /* Allows height to grow if content exceeds 200px */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #BFD6EF;     /* Background color */
+  }
+  
+  .feature {
+    text-align: center;
+  }
+  
+  .feature-icon {
+    width: 60px;       /* Icon size */
+    height: 60px;      /* Icon size */
+    margin-bottom: 10px;  /* Space between icon and text */
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  /* testimoneal */
+  .testimony-section {
+    width: 100%;
+    height: 750px; /* Section height */
+    background-color: #B9DF49; /* Background color */
+    padding: 30px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .section-heading {
+    font-size: 24px; /* Heading size */
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .testimonials-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    margin-top: 20px;
+    align-items: center;
+  }
+  
+  .testimonial {
+    background-color: white;
+    border-radius: 10px;
+    width: 400px; /* Reduced card width */
+    height: 220px; /* Reduced card height */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Reduced padding */
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Flex column layout */
+    align-items: center;
+    justify-content: space-between; /* Space between image, name, and quote */
+  }
+  
+  .testimonial:hover {
+    transform: scale(1.05);
+  }
+  
+  .testimonial-img {
+    width: 50px; /* Reduced image size */
+    height: 50px; /* Reduced image size */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-text {
+    text-align: center;
+    width: 100%; /* Ensures the text takes full width of the card */
+  }
+  
+  .name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .subheading {
+    font-size: 14px; /* Slightly bigger font size for college name */
+    color: #777;
+    margin: 0;
+  }
+  
+  .testimonial-quote {
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .testimonial-quote p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .testimonials-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .testimonial {
+      width: 80%; /* Card width on mobile */
+      margin-bottom: 20px;
+    }
+  }
+  /* CTA  section  */
+  /* Main CTA Section */
+.cta-section {
+    background-color: #CCE38D;
+    height: 274px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    border-radius: 0; /* No rounded corners for the section */
+  }
+  
+  /* Centered Content */
+  .cta-container {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  /* Heading Styles */
+  .cta-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50; /* dark color for better contrast */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* adds emphasis */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow to add depth */
+  }
+  
+  /* Quote Text Styles */
+  .cta-quote {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-style: italic; /* adds emphasis to the quote */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.5px; /* subtle letter spacing for readability */
+  }
+  
+  /* Button Styles */
+  .cta-button {
+    background-color: #FF6F00;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px; /* Rounded corners for the button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle button shadow */
+  }
+  
+  /* Button Hover Effect */
+  .cta-button:hover {
+    background-color: #e65c00;
+    transform: translateY(-3px); /* makes button lift slightly on hover */
+  }
+  
+  /* Button Focus Effect */
+  .cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 111, 0, 0.7); /* glow effect when focused */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 600px) {
+    .cta-heading {
+      font-size: 28px;
+    }
+  
+    .cta-quote {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  
+    .cta-button {
+      font-size: 16px;
+      padding: 12px 30px;
+    }
+  }
+  /* benifit section  */
+  .benefits-section {
+    background-color: #2C3E50;
+    color: white;
+    padding: 50px 0;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .main-heading {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .feature {
+    width: 30%;
+    margin-bottom: 30px;
+  }
+  
+  .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .feature-heading {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .feature-subheading {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .feature {
+      width: 45%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feature {
+      width: 100%;
+    }
+  }
+  /* join event section  */
+  
+.events-section {
+    text-align: center;
+    background-color: #1b2b4a; /* Navy blue background */
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .events-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .event-card {
+    display: inline-flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    align-items: center;
+  }
+  
+  .event-image img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .event-details {
+    text-align: left;
+    padding-left: 20px;
+    color: #333;
+  }
+  
+  .event-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .event-details p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+  }
+  
+  .register-btn {
+    background-color: #ff6b00; /* Orange button */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .register-btn:hover {
+    background-color: #e65a00;
+  }
+  /* footer */
+
+  .footer {
+    background-color: #2C3E50;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+  
+  

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
+import Home from './Pages/home/Home';
 import AboutPage from './Pages/AboutPage';
 import MainLayout from './MainLayout';
 import Login from './Pages/Login/Login';
@@ -14,6 +14,7 @@ import ApplicationPage from './Pages/ApplicationPage'
 import HowCanHelpYou from './Pages/HowCanHelpYou';
 import ProfilePage from './Pages/profile/ProfilePage';
 import MyCart from './Pages/Mycart';
+import Collage from './Pages/collage/Collage';
 
 
 
@@ -21,8 +22,8 @@ const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path='/Home' element={<HomePage />} />
+        <Route index element={<Home />} />
+        <Route path='/Home' element={<Home />} />
         <Route path="signin" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="contactus" element={<ContactUs />} />
@@ -35,6 +36,8 @@ const MainRoutes = () => {
         <Route path="faq" element={<HowCanHelpYou />} />
         <Route path="Profile" element={<ProfilePage />} />
         <Route path="payment" element={<MyCart />} />
+        <Route path="Collage" element={<Collage />} />
+
 
       </Route>
     </Routes>
