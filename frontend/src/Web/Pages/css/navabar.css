@@ -1,15 +1,52 @@
-/* Remove hover effect on navbar links */
+/* Custom Navbar CSS */
+.navbar .d-flex {
+  display: flex;
+  justify-content: flex-end; /* Align the buttons to the right */
+  align-items: center; /* Vertically center the buttons */
+}
+
+.navbar .btn {
+  margin: 0 10px; /* Add space between the buttons */
+  text-decoration: none; /* Remove any default underlining */
+}
+
+/* Button hover effects */
+.navbar .btn:hover {
+  background-color: transparent !important; /* Make the background transparent */
+  color: inherit !important; /* Keep the text color the same */
+  border-color: inherit !important; /* Keep the border color unchanged */
+  text-decoration: underline; /* Add underline on hover */
+  text-decoration-color: white; /* Set the underline color to white */
+  box-shadow: none; /* Prevent any box shadow */
+}
+
+/* Specific button types */
+.navbar .btn-outline-dark {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.navbar .btn-primary {
+  background-color: blue;
+  color: white;
+}
+
+.navbar .btn-danger {
+  background-color: red;
+  color: white;
+}
+
+/* Remove hover effect for navigation links */
 .navbar-nav .nav-link {
-  transition: none !important; /* Disable transitions on hover */
+  color: white !important; /* Set the default text color */
+  text-decoration: none !important; /* Remove underline */
+  background-color: transparent !important; /* Ensure no background color */
+  transition: none !important; /* Disable transition effects */
 }
 
 .navbar-nav .nav-link:hover {
-  color: inherit !important; /* Keep the text color the same on hover */
-}
-
-/* Optional: Remove hover effect on buttons */
-.btn-outline-light:hover,
-.btn-outline-danger:hover {
-  background-color: transparent !important; /* Remove hover background color */
-  border-color: inherit !important; /* Maintain the same border color */
+  color: white !important; /* Maintain the original text color */
+  background-color: transparent !important; /* Prevent any background color on hover */
+  text-decoration: none !important; /* Prevent underline on hover */
 }

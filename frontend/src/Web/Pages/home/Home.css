@@ -1,4 +1,4 @@
-.hero-section {
+.hero-section_1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -26,7 +26,7 @@
     margin-bottom: 30px;
   }
   
-  .apply-btn {
+  .apply-btn_1 {
     padding: 12px 25px;
     background-color: #3498db; /* Blue background */
     color: #fff;
@@ -173,7 +173,7 @@
   }
   /* CTA  section  */
   /* Main CTA Section */
-.cta-section {
+.cta-section_1 {
     background-color: #CCE38D;
     height: 274px;
     display: flex;
@@ -186,14 +186,14 @@
   }
   
   /* Centered Content */
-  .cta-container {
+  .cta-container_1 {
     text-align: center;
     max-width: 900px;
     width: 100%;
   }
   
   /* Heading Styles */
-  .cta-heading {
+  .cta-heading_1 {
     font-size: 36px;
     font-weight: 700;
     color: #2c3e50; /* dark color for better contrast */
@@ -204,7 +204,7 @@
   }
   
   /* Quote Text Styles */
-  .cta-quote {
+  .cta-quote_1 {
     font-size: 18px;
     color: #555;
     line-height: 1.5;
@@ -217,7 +217,7 @@
   }
   
   /* Button Styles */
-  .cta-button {
+  .cta-button_1 {
     background-color: #FF6F00;
     color: white;
     border: none;
@@ -231,86 +231,86 @@
   }
   
   /* Button Hover Effect */
-  .cta-button:hover {
+  .cta-button_1:hover {
     background-color: #e65c00;
     transform: translateY(-3px); /* makes button lift slightly on hover */
   }
   
   /* Button Focus Effect */
-  .cta-button:focus {
+  .cta-button_1:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(255, 111, 0, 0.7); /* glow effect when focused */
   }
   
   /* Responsive Design for Smaller Screens */
   @media (max-width: 600px) {
-    .cta-heading {
+    .cta-heading_1 {
       font-size: 28px;
     }
   
-    .cta-quote {
+    .cta-quote_1 {
       font-size: 16px;
       margin-bottom: 20px;
     }
   
-    .cta-button {
+    .cta-button_1 {
       font-size: 16px;
       padding: 12px 30px;
     }
   }
   /* benifit section  */
-  .benefits-section {
+  .benefits-section_1 {
     background-color: #2C3E50;
     color: white;
     padding: 50px 0;
   }
   
-  .container {
+  .container_1 {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
   }
   
-  .main-heading {
+  .main-heading_1 {
     font-size: 36px;
     margin-bottom: 30px;
   }
   
-  .features {
+  .features_1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   
-  .feature {
+  .feature_1 {
     width: 30%;
     margin-bottom: 30px;
   }
   
-  .icon {
+  .icon_1 {
     font-size: 40px;
     margin-bottom: 10px;
     color: white;
   }
   
-  .feature-heading {
+  .feature-heading_1 {
     font-size: 24px;
     margin: 10px 0;
   }
   
-  .feature-subheading {
+  .feature-subheading_1 {
     font-size: 16px;
   }
   
   @media (max-width: 768px) {
-    .feature {
+    .feature_1 {
       width: 45%;
     }
   }
   
   @media (max-width: 480px) {
-    .feature {
+    .feature_1 {
       width: 100%;
     }
   }

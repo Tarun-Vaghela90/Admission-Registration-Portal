@@ -4,11 +4,11 @@ import './Home.css';
 export default function Home() {
   return (
     <div>
-      <header className="hero-section">
+      <header className="hero-section_1">
         <div className="hero-content">
           <h2>Apply for Your Future Today</h2>
           <p>Join the best institutions in the country</p>
-          <button className="apply-btn">Apply Now</button>
+          <button className="apply-btn_1">Apply Now</button>
         </div>
       </header>
       
@@ -86,21 +86,21 @@ export default function Home() {
   </div>
 </div>
 {/* CTA Section */}
-<section class="cta-section">
-  <div class="cta-container">
-    <h2 class="cta-heading">Start Your Journey Today!</h2>
-    <p class="cta-quote">Join thousands of successful applicants and take the first step toward your dream university.</p>
-    <button class="cta-button">Get Started</button>
+<section class="cta-section_1">
+  <div class="cta-container_1">
+    <h2 class="cta-heading_1">Start Your Journey Today!</h2>
+    <p class="cta-quote_1">Join thousands of successful applicants and take the first step toward your dream university.</p>
+    <button class="cta-button_1">Get Started</button>
   </div>
 </section>
 {/* benifit  section */}
-<section className="benefits-section">
-  <div className="container">
-    <h2 className="main-heading">Why Choose Our Admission Portal?</h2>
-    <div className="features">
-      <div className="feature">
+<section className="benefits-section_1">
+  <div className="container_1">
+    <h2 className="main-heading_1">Why Choose Our Admission Portal?</h2>
+    <div className="features_1">
+      <div className="feature_1">
         {/* SVG Icon for Easy Registration */}
-        <div className="icon">
+        <div className="icon_1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -111,12 +111,12 @@ export default function Home() {
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zM12 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-7c-2.67 0-4-2.5-4-4s1.33-4 4-4 4 2.5 4 4-1.33 4-4 4z" />
           </svg>
         </div>
-        <h3 className="feature-heading">Easy Registration</h3>
-        <p className="feature-subheading">
+        <h3 className="feature-heading_1_1">Easy Registration</h3>
+        <p className="feature-subheading_1_1">
           Simple and hassle-free sign-up process
         </p>
       </div>
-      <div className="feature">
+      <div className="feature_1">
         {/* SVG Icon for Secure Data */}
         <div className="icon">
           <svg
@@ -129,12 +129,12 @@ export default function Home() {
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zM12 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-7c-2.67 0-4-2.5-4-4s1.33-4 4-4 4 2.5 4 4-1.33 4-4 4z" />
           </svg>
         </div>
-        <h3 className="feature-heading">Secure Data</h3>
-        <p className="feature-subheading">Your personal data is safe with us</p>
+        <h3 className="feature-heading_1_1">Secure Data</h3>
+        <p className="feature-subheading_1_1">Your personal data is safe with us</p>
       </div>
-      <div className="feature">
+      <div className="feature_1">
         {/* SVG Icon for Real-Time Updates */}
-        <div className="icon">
+        <div className="icon_1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -145,14 +145,14 @@ export default function Home() {
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zM12 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-7c-2.67 0-4-2.5-4-4s1.33-4 4-4 4 2.5 4 4-1.33 4-4 4z" />
           </svg>
         </div>
-        <h3 className="feature-heading">Real-Time Updates</h3>
-        <p className="feature-subheading">
+        <h3 className="feature-heading_1_1">Real-Time Updates</h3>
+        <p className="feature-subheading_1_1">
           Stay informed with instant notifications
         </p>
       </div>
-      <div className="feature">
+      <div className="feature_1">
         {/* SVG Icon for Advanced Search */}
-        <div className="icon">
+        <div className="icon_1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -163,12 +163,12 @@ export default function Home() {
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zM12 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-7c-2.67 0-4-2.5-4-4s1.33-4 4-4 4 2.5 4 4-1.33 4-4 4z" />
           </svg>
         </div>
-        <h3 className="feature-heading">Advanced Search</h3>
-        <p className="feature-subheading">Find the right colleges with ease</p>
+        <h3 className="feature-heading_1">Advanced Search</h3>
+        <p className="feature-subheading_1">Find the right colleges with ease</p>
       </div>
-      <div className="feature">
+      <div className="feature_1">
         {/* SVG Icon for Student Support */}
-        <div className="icon">
+        <div className="icon_1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -179,12 +179,12 @@ export default function Home() {
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zM12 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-7c-2.67 0-4-2.5-4-4s1.33-4 4-4 4 2.5 4 4-1.33 4-4 4z" />
           </svg>
         </div>
-        <h3 className="feature-heading">Student Support</h3>
-        <p className="feature-subheading">
+        <h3 className="feature-heading_1">Student Support</h3>
+        <p className="feature-subheading_1">
           Dedicated support for all your queries
         </p>
       </div>
-      <div className="feature">
+      <div className="feature_1">
         {/* SVG Icon for Application Tracking */}
         <div className="icon">
           <svg
@@ -197,8 +197,8 @@ export default function Home() {
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zM12 18c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-7c-2.67 0-4-2.5-4-4s1.33-4 4-4 4 2.5 4 4-1.33 4-4 4z" />
           </svg>
         </div>
-        <h3 className="feature-heading">Application Tracking</h3>
-        <p className="feature-subheading">
+        <h3 className="feature-heading_1">Application Tracking</h3>
+        <p className="feature-subheading_1">
           Track your application status in real-time
         </p>
       </div>
