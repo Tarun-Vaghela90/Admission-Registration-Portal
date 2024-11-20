@@ -111,7 +111,7 @@ const Application = () => {
     <div className='container-fluid px-4 py-3' id='pdf-content'>
       <h6 className='text-success fs-4'>List of Student Applications</h6>
       <Button variant="success" onClick={handleDownloadExcel} className="mb-3">
-        Download Applications as Excel 
+        Download Data 
       </Button>
       {loading ? (
         <p>Loading applications...</p>

@@ -36,7 +36,7 @@ const Collage = () => {
           <div className="college-cards">
             {/* First card */}
             <div className="college-card">
-              <img src="Assets/cta_background.jpg" alt="Parul University" />
+              <img src="images/parul.jpg" alt="Parul University" />
               <div className="college-details">
                 <h2>Parul University</h2>
                 <p><strong>Vadodara, Gujarat</strong></p>
@@ -52,7 +52,7 @@ const Collage = () => {
 
             {/* Fake College 1 */}
             <div className="college-card">
-              <img src="Assets/cta_background.jpg" alt="Harvard University" />
+              <img src="images/Harvard.webp" alt="Harvard University" />
               <div className="college-details">
                 <h2>Harvard University</h2>
                 <p><strong>Cambridge, Massachusetts</strong></p>
@@ -68,7 +68,7 @@ const Collage = () => {
 
             {/* Fake College 2 */}
             <div className="college-card">
-              <img src="Assets/cta_background.jpg" alt="MIT" />
+              <img src="images/mit.jpg" alt="MIT" />
               <div className="college-details">
                 <h2>MIT (Massachusetts Institute of Technology)</h2>
                 <p><strong>Cambridge, Massachusetts</strong></p>
