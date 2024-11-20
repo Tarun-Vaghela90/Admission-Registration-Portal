@@ -7,6 +7,7 @@
     background-image: url('Man_with_Book_Hero_Section.jpg');
     background-size: cover;
     background-position: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   .hero-content {
@@ -38,13 +39,13 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Light shadow for the "popup" effect */
   }
   
-  .apply-btn:hover {
+  .apply-btn_1:hover {
     background-color: #2980b9; /* Darker blue on hover */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
     transform: translateY(-3px); /* Move the button up slightly */
   }
   
-  .apply-btn:active {
+  .apply-btn_1:active {
     transform: translateY(0); /* Reset the button position when clicked */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Return to the original shadow */
   }
@@ -55,8 +56,8 @@
     display: flex;
     justify-content: space-around;  /* Distributes items evenly across the screen */
     align-items: center;           /* Centers items vertically */
-    min-height: 200px;             /* Minimum height of 200px */
-    height: auto;                  /* Allows height to grow if content exceeds 200px */
+    min-height: 120px;             /* Minimum height of 200px */
+    /* height: auto;                  Allows height to grow if content exceeds 200px */
     padding: 20px;
     box-sizing: border-box;
     background-color: #BFD6EF;     /* Background color */
@@ -65,11 +66,17 @@
   .feature {
     text-align: center;
   }
+  .feature_h3{
+    font-size: larger;
+    font-weight: bold;
+  }
   
   .feature-icon {
     width: 60px;       /* Icon size */
     height: 60px;      /* Icon size */
-    margin-bottom: 10px;  /* Space between icon and text */
+    margin-bottom: 10px;
+    color: black;
+      /* Space between icon and text */
   }
   
   h3 {

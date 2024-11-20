@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  .container_1 {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading_1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .alert_success_1 {
+    text-align: center;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .alert_heading_1 {
+    color: #155724;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .alert_text_1 {
+    color: #155724;
+    font-size: 1rem;
+  }
+  
+  .submitted_application_1 {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  .section_heading_1 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .divider_1 {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+  }
+  
+  .table_1 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table_head_1 {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .table_header_1 {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .table_data_1 {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+  }
+  
+  .button_container_1 {
+    text-align: center;
+  }
+  
+  .download_button_1 {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .download_button_1:hover {
+    background-color: #0056b3;
+  }
+  

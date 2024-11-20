@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import './css/mycart.css';
 
 export default function MyCart() {
   const location = useLocation();
@@ -21,14 +22,14 @@ export default function MyCart() {
       startY: 20,
       head: [['Field', 'Details']],
       body: [
-        ['First Name', formData.firstName || 'N/A'],
-        ['Last Name', formData.lastName || 'N/A'],
-        ['Mobile Number', formData.mobileNumber || 'N/A'],
-        ['Email', formData.email || 'N/A'],
-        ['Course Name', formData.courseName || 'N/A'],
-        ['Gender', formData.gender || 'N/A'],
-        ['Course Fee', `₹${courseFee}`], // Static course fee
-        ['Payment Status', 'Payment Successful'], // Indicate successful payment
+        ['First Name', formData?.firstName || 'N/A'],
+        ['Last Name', formData?.lastName || 'N/A'],
+        ['Mobile Number', formData?.mobileNumber || 'N/A'],
+        ['Email', formData?.email || 'N/A'],
+        ['Course Name', formData?.courseName || 'N/A'],
+        ['Gender', formData?.gender || 'N/A'],
+        ['Course Fee', `₹${courseFee}`],
+        ['Payment Status', 'Payment Successful'],
       ],
     });
 
@@ -36,37 +37,75 @@ export default function MyCart() {
   };
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">Payment</h1>
-
+    <div className="container_1">
+      <h1 className="heading_1">Payment Confirmation</h1>
       {/* Payment success message */}
-      <div className="alert alert-success text-center" role="alert">
-        <h2>Payment Successful!</h2>
-        <p>Your payment has been processed successfully. Below are your application and payment details:</p>
+      <div className="alert_success_1">
+        <h2 className="alert_heading_1">Payment Successful!</h2>
+        <p className="alert_text_1">
+          Your payment has been processed successfully. Below are your application
+          and payment details:
+        </p>
       </div>
-
-      {formData ? (
-        <div className="card p-4">
-          <h3>Submitted Application Details</h3>
-          <p><strong>First Name:</strong> {formData.firstName}</p>
-          <p><strong>Last Name:</strong> {formData.lastName}</p>
-          <p><strong>Mobile Number:</strong> {formData.mobileNumber}</p>
-          <p><strong>Email:</strong> {formData.email}</p>
-          <p><strong>Course Name:</strong> {formData.courseName}</p>
-          <p><strong>Gender:</strong> {formData.gender}</p>
-
-          <h3 className="mt-4">Payment Details</h3>
-          <p><strong>Course Fee:</strong> ₹{courseFee}</p> {/* Static course fee */}
-          <p><strong>Payment Status:</strong> Payment Successful</p> {/* Indicate successful payment */}
-
-          {/* Button to download PDF */}
-          <button onClick={downloadPDF} className="btn btn-primary mt-4">
+      {/* Submitted Application Details */}
+      <div className="submitted_application_1">
+        <h3 className="section_heading_1">Submitted Application Details</h3>
+        <hr className="divider_1" />
+        <table className="table_1">
+          <thead className="table_head_1">
+            <tr>
+              <th className="table_header_1">Field</th>
+              <th className="table_header_1">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="table_data_1">First Name</td>
+              <td className="table_data_1">{formData?.firstName || 'John'}</td>
+            </tr>
+            <tr>
+              <td className="table_data_1">Last Name</td>
+              <td className="table_data_1">{formData?.lastName || 'Doe'}</td>
+            </tr>
+            <tr>
+              <td className="table_data_1">Mobile Number</td>
+              <td className="table_data_1">{formData?.mobileNumber || '1234567890'}</td>
+            </tr>
+            <tr>
+              <td className="table_data_1">Email</td>
+              <td className="table_data_1">{formData?.email || 'john.doe@example.com'}</td>
+            </tr>
+            <tr>
+              <td className="table_data_1">Course Name</td>
+              <td className="table_data_1">{formData?.courseName || 'Web Development'}</td>
+            </tr>
+            <tr>
+              <td className="table_data_1">Gender</td>
+              <td className="table_data_1">{formData?.gender || 'Male'}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 className="section_heading_1">Payment Details</h3>
+        <hr className="divider_1" />
+        <table className="table_1">
+          <tbody>
+            <tr>
+              <td className="table_data_1">Course Fee</td>
+              <td className="table_data_1">₹{courseFee}</td>
+            </tr>
+            <tr>
+              <td className="table_data_1">Payment Status</td>
+              <td className="table_data_1">Payment Successful</td>
+            </tr>
+          </tbody>
+        </table>
+        {/* Button to download PDF */}
+        <div className="button_container_1">
+          <button className="download_button_1" onClick={downloadPDF}>
             Download as PDF
           </button>
         </div>
-      ) : (
-        <p>No application data available.</p>
-      )}
+      </div>
     </div>
   );
 }

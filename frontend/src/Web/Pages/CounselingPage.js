@@ -21,7 +21,7 @@ const CounselingPage = () => {
           </p>
         </div>
         <div className="intro-image">
-          <img src="./images/image.png" />
+          <img src="/images/mit.jpg" />
         </div>
       </section>
 

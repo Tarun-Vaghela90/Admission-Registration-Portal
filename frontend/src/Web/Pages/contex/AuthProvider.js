@@ -1,33 +1,31 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-// Create a context for authentication
+// Create AuthContext
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Local state to track login status
 
-  // Check if the user is already logged in (on initial load)
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    // Check if token exists in localStorage on mount
+    const token = localStorage.getItem('authToken');
     if (token) {
       setIsLoggedIn(true);
     }
   }, []);
 
-  // Function to log in and set the login state
   const login = (token) => {
-    localStorage.setItem('authToken', token);
-    setIsLoggedIn(true);
+    localStorage.setItem('authToken', token); // Store token in localStorage
+    setIsLoggedIn(true); // Update login state
   };
 
-  // Function to log out and reset the login state
   const logout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('authToken');
     setIsLoggedIn(false);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, login, setIsLoggedIn, logout }}>
       {children}
     </AuthContext.Provider>
   );

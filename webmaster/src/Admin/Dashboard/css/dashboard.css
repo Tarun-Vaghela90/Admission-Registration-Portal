@@ -1,0 +1,105 @@
+/* /* .row_table{
+    height: 100px;
+    color: blue;
+}
+.table{
+    border-radius: 20%;
+    color: green;
+} */
+ body{
+    font-family:monospace;
+    line-height: 1.2;
+ }
+ /* Add this to your CSS file */
+.navbar-blur {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Ensure the navbar is above other elements */
+    backdrop-filter: blur(100px); /* Adjust the value to control the amount of blur */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Semi-transparent background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  }
+   */
+
+.abc{
+    background-color: green;
+}
+thead{
+background-color: whitesmoke;
+}
+table{
+    border-radius: 20%;
+}
+.chart-container{
+      border-style: solid;
+      border-color: rgb(79, 82, 79);
+      transition: ease-out;
+      border-width: 3.8px;
+       background-color: whitesmoke;
+    }
+    
+/* updated page */
+/* General reset for margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Card Section */
+  .d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    margin: 10px;
+    max-width: 100%;
+    width: 25%; /* Keep cards at 25% width on medium and large screens */
+  }
+  
+  /* Card Styling */
+  .card-header {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  
+  .card-body {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Charts Section Styling */
+  .Charts-main {
+    padding: 20px;
+  }
+  
+  .Charts-main h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Flexbox for charts (side by side) */
+  .Charts-main .d-flex {
+    display: flex;              /* Use flexbox */
+    justify-content: center;    /* Center items horizontally */
+    align-items: center;        /* Align items vertically */
+  }
+  
+  .Charts-main .mx-3 {
+    margin: 10px;
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .PieChart, .ApexChart {
+    max-width: 100%;
+    height: auto;
+  }
+  

@@ -1,7 +1,88 @@
-import React from 'react';
-import './Collage.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Collage.css";
 
 const Collage = () => {
+  const [location, setLocation] = useState("");
+  const [course, setCourse] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const [colleges] = useState([
+    {
+      id: 1,
+      name: "Parul University",
+      location: "Vadodara, Gujarat",
+      description:
+        "A multidisciplinary university that fosters academic excellence and global exposure.",
+      rank: 1,
+      admission: "Online",
+      courses: ["Computer Science", "MBA","B.tech","Mechanical"],
+      fees: [
+        { course: "Computer Science", duration: "4 years", fee: "$8,000/year" },
+        { course: "MBA", duration: "2 years", fee: "$10,000/year" },
+      ],
+    },
+    {
+      id: 2,
+      name: "Harvard University",
+      location: "Cambridge, Massachusetts",
+      description:
+        "Harvard is one of the world's most prestigious universities, known for its top-tier programs.",
+      rank: 2,
+      admission: "Offline",
+      courses: ["Law", "Business Administration","B.tech","BCA"],
+      fees: [
+ 
+      ],
+    },
+    {
+      id: 3,
+      name: "MIT",
+      location: "Cambridge, Massachusetts",
+      description:
+        "MIT is renowned for its cutting-edge research in science and technology.",
+      rank: 3,
+      admission: "Online",
+      courses: ["Law", "Business Administration","B.tech","BCA"],
+      fees: [
+        { course: "Law", duration: "3 years", fee: "$50,000/year" },
+        { course: "Business Administration", duration: "2 years", fee: "$60,000/year" },
+      ],
+    },
+    // More colleges as needed
+  ]);
+
+  const [filteredColleges, setFilteredColleges] = useState(colleges);
+
+  const handleSearchInput = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+
+    if (query.trim() === "") {
+      setFilteredColleges(colleges);
+    }
+  };
+
+  const handleSearch = () => {
+    const results = colleges.filter((college) =>
+      college.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredColleges(results);
+  };
+
+  const handleApplyFilter = () => {
+    const results = colleges.filter((college) => {
+      const matchesLocation = location
+        ? college.location.toLowerCase().includes(location.toLowerCase())
+        : true;
+      const matchesCourse = course
+        ? college.description.toLowerCase().includes(course.toLowerCase())
+        : true;
+      return matchesLocation && matchesCourse;
+    });
+    setFilteredColleges(results);
+  };
+
   return (
     <div className="collage-container">
       <header className="header">
@@ -13,139 +94,70 @@ const Collage = () => {
           <h3>Filter</h3>
           <div className="filter-option">
             <label>Location</label>
-            <input type="text" placeholder="Enter location" />
+            <input
+              type="text"
+              placeholder="Enter location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
           </div>
           <div className="filter-option">
             <label>Course/Program</label>
-            <input type="text" placeholder="Enter course/program" />
+            <input
+              type="text"
+              placeholder="Enter course/program"
+              value={course}
+              onChange={(e) => setCourse(e.target.value)}
+            />
           </div>
-          
-          <button className="apply-btn">Apply Filter</button>
+          <button className="apply-btn" onClick={handleApplyFilter}>
+            Apply Filter
+          </button>
         </aside>
 
         <div className="college-list">
           <div className="search-section">
-            <input 
-              type="text" 
-              className="search-bar" 
-              placeholder="Search by College Name" 
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search by College Name"
+              value={searchQuery}
+              onChange={handleSearchInput}
             />
-            <button className="search-btn">Search</button>
+            <button className="search-btn " onClick={handleSearch}>
+              Search
+            </button>
           </div>
 
           <div className="college-cards">
-            {/* First card */}
-            <div className="college-card">
-              <img src="images/parul.jpg" alt="Parul University" />
-              <div className="college-details">
-                <h2>Parul University</h2>
-                <p><strong>Vadodara, Gujarat</strong></p>
-                <p className="description">
-                  A multidisciplinary university that fosters academic excellence and global exposure. Parul University is recognized for its diverse courses in medical, technical, and management fields.
-                </p>
-                <p className="rank-info">
-                  Rank <strong>1/10</strong> <span className="admission-status">Admission Process <span className="online">Online</span></span>
-                </p>
-                <button className="learn-btn">Learn More</button>
+            {filteredColleges.map((college) => (
+              <div key={college.id} className="college-card">
+                <img src="Assets/cta_background.jpg" alt={college.name} />
+                <div className="college-details">
+                  <h2>{college.name}</h2>
+                  <p>
+                    <strong>{college.location}</strong>
+                  </p>
+                  <p className="description">{college.description}</p>
+                  <p className="rank-info">
+                    Rank <strong>{college.rank}/10</strong>{" "}
+                    <span className="admission-status">
+                      Admission Process{" "}
+                      <span className={college.admission.toLowerCase()}>
+                        {college.admission}
+                      </span>
+                    </span>
+                  </p>
+                  <Link
+                    to="/CollageInfo"
+                    state={{ card: college }}
+                    className="learn-btn"
+                  >
+                    Learn More
+                  </Link>
+                </div>
               </div>
-            </div>
-
-            {/* Fake College 1 */}
-            <div className="college-card">
-              <img src="images/Harvard.webp" alt="Harvard University" />
-              <div className="college-details">
-                <h2>Harvard University</h2>
-                <p><strong>Cambridge, Massachusetts</strong></p>
-                <p className="description">
-                  Harvard is one of the world's most prestigious universities, known for its top-tier programs in law, medicine, business, and technology.
-                </p>
-                <p className="rank-info">
-                  Rank <strong>2/10</strong> <span className="admission-status">Admission Process <span className="online">Offline</span></span>
-                </p>
-                <button className="learn-btn">Learn More</button>
-              </div>
-            </div>
-
-            {/* Fake College 2 */}
-            <div className="college-card">
-              <img src="images/mit.jpg" alt="MIT" />
-              <div className="college-details">
-                <h2>MIT (Massachusetts Institute of Technology)</h2>
-                <p><strong>Cambridge, Massachusetts</strong></p>
-                <p className="description">
-                  MIT is renowned for its cutting-edge research in science and technology, offering world-class programs in engineering, computer science, and artificial intelligence.
-                </p>
-                <p className="rank-info">
-                  Rank <strong>3/10</strong> <span className="admission-status">Admission Process <span className="online">Online</span></span>
-                </p>
-                <button className="learn-btn">Learn More</button>
-              </div>
-            </div>
-
-            {/* Fake College 3 */}
-            <div className="college-card">
-              <img src="Assets/cta_background.jpg" alt="Stanford University" />
-              <div className="college-details">
-                <h2>Stanford University</h2>
-                <p><strong>Stanford, California</strong></p>
-                <p className="description">
-                  Stanford is a leading research university, famous for its entrepreneurial spirit and strong programs in business, technology, and the sciences.
-                </p>
-                <p className="rank-info">
-                  Rank <strong>4/10</strong> <span className="admission-status">Admission Process <span className="online">Offline</span></span>
-                </p>
-                <button className="learn-btn">Learn More</button>
-              </div>
-            </div>
-
-            {/* Fake College 4 */}
-            <div className="college-card">
-              <img src="Assets/cta_background.jpg" alt="Oxford University" />
-              <div className="college-details">
-                <h2>Oxford University</h2>
-                <p><strong>Oxford, England</strong></p>
-                <p className="description">
-                  Oxford is the oldest university in the English-speaking world, offering a wide range of programs in humanities, science, and law.
-                </p>
-                <p className="rank-info">
-                  Rank <strong>5/10</strong> <span className="admission-status">Admission Process <span className="online">Online</span></span>
-                </p>
-                <button className="learn-btn">Learn More</button>
-              </div>
-            </div>
-
-            {/* Fake College 5 */}
-            <div className="college-card">
-              <img src="Assets/cta_background.jpg" alt="Cambridge University" />
-              <div className="college-details">
-                <h2>Cambridge University</h2>
-                <p><strong>Cambridge, England</strong></p>
-                <p className="description">
-                  Cambridge University is a top-tier institution, known for its rigorous academics in science, engineering, and arts.
-                </p>
-                <p className="rank-info">
-                  Rank <strong>6/10</strong> <span className="admission-status">Admission Process <span className="online">Offline</span></span>
-                </p>
-                <button className="learn-btn">Learn More</button>
-              </div>
-            </div>
-
-            {/* Fake College 6 */}
-            <div className="college-card">
-              <img src="Assets/cta_background.jpg" alt="ETH Zurich" />
-              <div className="college-details">
-                <h2>ETH Zurich</h2>
-                <p><strong>Zurich, Switzerland</strong></p>
-                <p className="description">
-                  ETH Zurich is known for its excellence in science, technology, and engineering, consistently ranking among the world's best universities.
-                </p>
-                <p className="rank-info">
-                  Rank <strong>7/10</strong> <span className="admission-status">Admission Process <span className="online">Online</span></span>
-                </p>
-                <button className="learn-btn">Learn More</button>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </div>
@@ -154,3 +166,196 @@ const Collage = () => {
 };
 
 export default Collage;
+
+
+// import React, { useState } from "react";
+// import { Link } from "react-router-dom";
+// import "./Collage.css";
+
+// const Collage = () => {
+//   const [location, setLocation] = useState("");
+//   const [course, setCourse] = useState("");
+//   const [searchQuery, setSearchQuery] = useState("");
+
+//   const [colleges] = useState([
+//     {
+//       id: 1,
+//       name: "Parul University",
+//       location: "Vadodara, Gujarat",
+//       description:
+//         "A multidisciplinary university that fosters academic excellence and global exposure.",
+//       rank: 1,
+//       admission: "Online",
+//     },
+//     {
+//       id: 2,
+//       name: "Harvard University",
+//       location: "Cambridge, Massachusetts",
+//       description:
+//         "Harvard is one of the world's most prestigious universities, known for its top-tier programs.",
+//       rank: 2,
+//       admission: "Offline",
+//     },
+//     {
+//       id: 3,
+//       name: "MIT (Massachusetts Institute of Technology)",
+//       location: "Cambridge, Massachusetts",
+//       description:
+//         "MIT is renowned for its cutting-edge research in science and technology.",
+//       rank: 3,
+//       admission: "Online",
+//     },
+//     {
+//       id: 4,
+//       name: "Stanford University",
+//       location: "Stanford, California",
+//       description:
+//         "Stanford is a leading research university, famous for its entrepreneurial spirit.",
+//       rank: 4,
+//       admission: "Offline",
+//     },
+//     {
+//       id: 5,
+//       name: "Oxford University",
+//       location: "Oxford, England",
+//       description:
+//         "Oxford is the oldest university in the English-speaking world.",
+//       rank: 5,
+//       admission: "Online",
+//     },
+//     {
+//       id: 6,
+//       name: "Cambridge University",
+//       location: "Cambridge, England",
+//       description:
+//         "Cambridge University is a top-tier institution, known for its rigorous academics.",
+//       rank: 6,
+//       admission: "Offline",
+//     },
+//     {
+//       id: 7,
+//       name: "ETH Zurich",
+//       location: "Zurich, Switzerland",
+//       description:
+//         "ETH Zurich is known for its excellence in science, technology, and engineering.",
+//       rank: 7,
+//       admission: "Online",
+//     },
+//   ]);
+
+//   const [filteredColleges, setFilteredColleges] = useState(colleges);
+
+//   const handleSearchInput = (event) => {
+//     const query = event.target.value;
+//     setSearchQuery(query);
+
+//     if (query.trim() === "") {
+//       setFilteredColleges(colleges);
+//     }
+//   };
+
+//   const handleSearch = () => {
+//     const results = colleges.filter((college) =>
+//       college.name.toLowerCase().includes(searchQuery.toLowerCase())
+//     );
+//     setFilteredColleges(results);
+//   };
+
+//   const handleApplyFilter = () => {
+//     const results = colleges.filter((college) => {
+//       const matchesLocation = location
+//         ? college.location.toLowerCase().includes(location.toLowerCase())
+//         : true;
+//       const matchesCourse = course
+//         ? college.description.toLowerCase().includes(course.toLowerCase())
+//         : true;
+//       return matchesLocation && matchesCourse;
+//     });
+//     setFilteredColleges(results);
+//   };
+
+//   return (
+//     <div className="collage-container">
+//       <header className="header">
+//         <h1>Find Your College</h1>
+//       </header>
+
+//       <div className="main-content">
+//         <aside className="filter-section">
+//           <h3>Filter</h3>
+//           <div className="filter-option">
+//             <label>Location</label>
+//             <input
+//               type="text"
+//               placeholder="Enter location"
+//               value={location}
+//               onChange={(e) => setLocation(e.target.value)}
+//             />
+//           </div>
+//           <div className="filter-option">
+//             <label>Course/Program</label>
+//             <input
+//               type="text"
+//               placeholder="Enter course/program"
+//               value={course}
+//               onChange={(e) => setCourse(e.target.value)}
+//             />
+//           </div>
+//           <button className="apply-btn" onClick={handleApplyFilter}>
+//             Apply Filter
+//           </button>
+//         </aside>
+
+//         <div className="college-list">
+//           <div className="search-section">
+//             <input
+//               type="text"
+//               className="search-bar"
+//               placeholder="Search by College Name"
+//               value={searchQuery}
+//               onChange={handleSearchInput}
+//             />
+//             <button className="search-btn" onClick={handleSearch}>
+//               Search
+//             </button>
+//           </div>
+
+//           <div className="college-cards">
+//             {filteredColleges.map((college) => (
+//               <div key={college.id} className="college-card">
+//                 <img src="Assets/cta_background.jpg" alt={college.name} />
+//                 <div className="college-details">
+//                   <h2>{college.name}</h2>
+//                   <p>
+//                     <strong>{college.location}</strong>
+//                   </p>
+//                   <p className="description">{college.description}</p>
+//                   <p className="rank-info">
+//                     Rank <strong>{college.rank}/10</strong>{" "}
+//                     <span className="admission-status">
+//                       Admission Process{" "}
+//                       <span className={college.admission.toLowerCase()}>
+//                         {college.admission}
+//                       </span>
+//                     </span>
+//                   </p>
+//                   <Link
+//                     to="/collageinfo"
+//                     state={{ card: college }}
+//                     className="learn-btn"
+//                   >
+//                     Learn More
+//                   </Link>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Collage;
+
+

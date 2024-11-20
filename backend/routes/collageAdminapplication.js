@@ -96,9 +96,10 @@ router.put('/applications/:id', adminAuth, async (req, res) => {
         application.email,  // Applicant's email
         'Application Status Update',
         {
-          name: applicantFullName,  // Full name of the applicant
-          applicationId: application._id,  // Application ID
-          status: status  // New status (approved/rejected)
+          firstName: application.firstName,  // Applicant's first name
+          lastName: application.lastName,    // Applicant's last name
+          applicationId: application._id,    // Application ID
+          status: status                     // New status (approved/rejected)
         }
       );
       

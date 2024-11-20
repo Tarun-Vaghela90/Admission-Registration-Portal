@@ -1,31 +1,38 @@
-/* Custom Navbar CSS */
 .navbar .d-flex {
   display: flex;
-  justify-content: flex-end; /* Align the buttons to the right */
-  align-items: center; /* Vertically center the buttons */
+  justify-content: flex-end; 
+  align-items: center; 
 }
 
 .navbar .btn {
-  margin: 0 10px; /* Add space between the buttons */
-  text-decoration: none; /* Remove any default underlining */
+  margin: 0 10px; 
+  text-decoration: none; 
 }
 
-/* Button hover effects */
-.navbar .btn:hover {
-  background-color: transparent !important; /* Make the background transparent */
-  color: inherit !important; /* Keep the text color the same */
-  border-color: inherit !important; /* Keep the border color unchanged */
-  text-decoration: underline; /* Add underline on hover */
-  text-decoration-color: white; /* Set the underline color to white */
-  box-shadow: none; /* Prevent any box shadow */
-}
+/* .navbar .btn:hover {
+  background-color: transparent !important; 
+  color: inherit !important; 
+  border-color: inherit !important; 
+  text-decoration: underline; 
+  text-decoration-color: white; 
+  box-shadow: none; 
+} */
 
-/* Specific button types */
-.navbar .btn-outline-dark {
+/* Override hover for Sign In and Sign Up buttons */
+/* .navbar .btn-outline-dark:hover,
+.navbar .btn-primary:hover {
+  background-color: inherit !important; 
+  color: inherit !important; 
+  border-color: inherit !important; 
+  text-decoration: none !important;
+  box-shadow: none !important;
+} */
+
+/* .navbar .btn-outline-dark {
   background-color: white;
   color: black;
   border: 1px solid black;
-}
+} */
 
 .navbar .btn-primary {
   background-color: blue;
@@ -37,16 +44,15 @@
   color: white;
 }
 
-/* Remove hover effect for navigation links */
 .navbar-nav .nav-link {
-  color: white !important; /* Set the default text color */
-  text-decoration: none !important; /* Remove underline */
-  background-color: transparent !important; /* Ensure no background color */
-  transition: none !important; /* Disable transition effects */
+  color: white !important; 
+  text-decoration: none !important; 
+  background-color: transparent !important; 
+  transition: none !important; 
 }
 
-.navbar-nav .nav-link:hover {
-  color: white !important; /* Maintain the original text color */
-  background-color: transparent !important; /* Prevent any background color on hover */
-  text-decoration: none !important; /* Prevent underline on hover */
-}
+/* .navbar-nav .nav-link:hover {
+  color: white !important; 
+  background-color: transparent !important; 
+  text-decoration: none !important; 
+} */

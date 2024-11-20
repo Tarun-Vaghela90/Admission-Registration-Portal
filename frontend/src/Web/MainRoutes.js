@@ -5,7 +5,7 @@ import AboutPage from './Pages/AboutPage';
 import MainLayout from './MainLayout';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Signup/SignUp';
-import CollageInfo from './Pages/CollageInfo';
+import CollageInfo from './Pages/collage/CollageInfo';
 import ContactUs from './Pages/ContactUs';
 import ApplyPage from './Pages/ApplyPage';
 import CounselingPage from './Pages/CounselingPage'
@@ -36,7 +36,7 @@ const MainRoutes = () => {
         <Route path="faq" element={<HowCanHelpYou />} />
         <Route path="Profile" element={<ProfilePage />} />
         <Route path="payment" element={<MyCart />} />
-        <Route path="Collage" element={<Collage />} />
+        <Route path="findcollages" element={<Collage />} />
 
 
       </Route>
