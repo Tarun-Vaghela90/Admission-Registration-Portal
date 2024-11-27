@@ -8,7 +8,7 @@ const AboutPage = () => {
       <section className="mb-5 ">
         <h2>Introduction</h2>
         <p>
-          Welcome to the Admission Registration Portal of <strong>[Institution Name]</strong>. We are dedicated to providing a seamless and efficient platform for students to apply for admissions to various programs offered by our esteemed institution. Our portal is designed to simplify the application process, making it accessible and convenient for students across the globe.
+          Welcome to the Admission Registration Portal of <strong>Admission Portal</strong>. We are dedicated to providing a seamless and efficient platform for students to apply for admissions to various programs offered by our esteemed institution. Our portal is designed to simplify the application process, making it accessible and convenient for students across the globe.
         </p>
       </section>
 

@@ -96,16 +96,16 @@ export default function Home() {
       </section>
       {/* benifit  section */}
       <section className="benefits-section_1">
-        <div className="container_1">
-          <h2 className="main-heading_1">Why Choose Our Admission Portal?</h2>
+        <div className="p-5">
+          <h2 className="main-heading">Why Choose Our Admission Portal?</h2>
           <div className="features_1">
             <div className="feature_1">
               {/* SVG Icon for Easy Registration */}
               <div className="icon_1">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
               </div>
-              <h3 className="feature-heading_1_1">Easy Registration</h3>
-              <p className="feature-subheading_1_1">
+              <h3 className="feature-heading_1">Easy Registration</h3>
+              <p className="feature-subheading_1">
                 Simple and hassle-free sign-up process
               </p>
             </div>
@@ -114,16 +114,16 @@ export default function Home() {
               <div className="icon_1">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
               </div>
-              <h3 className="feature-heading_1_1">Secure Data</h3>
-              <p className="feature-subheading_1_1">Your personal data is safe with us</p>
+              <h3 className="feature-heading_1">Secure Data</h3>
+              <p className="feature-subheading_1">Your personal data is safe with us</p>
             </div>
             <div className="feature_1">
               {/* SVG Icon for Real-Time Updates */}
               <div className="icon_1">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </div>
-              <h3 className="feature-heading_1_1">Real-Time Updates</h3>
-              <p className="feature-subheading_1_1">
+              <h3 className="feature-heading_1">Real-Time Updates</h3>
+              <p className="feature-subheading_1">
                 Stay informed with instant notifications
               </p>
             </div>

@@ -268,20 +268,22 @@
   /* benifit section  */
   .benefits-section_1 {
     background-color: #2C3E50;
-    color: white;
+    /* color: white; */
     padding: 50px 0;
   }
   
-  .container_1 {
+  .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
   }
   
-  .main-heading_1 {
+  .main-heading {
     font-size: 36px;
     margin-bottom: 30px;
+    color: white;
+
   }
   
   .features_1 {
@@ -304,10 +306,14 @@
   .feature-heading_1 {
     font-size: 24px;
     margin: 10px 0;
+    color: white;
+
   }
   
   .feature-subheading_1 {
     font-size: 16px;
+    color: white;
+
   }
   
   @media (max-width: 768px) {
