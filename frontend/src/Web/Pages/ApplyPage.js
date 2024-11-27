@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';  // Import toastify CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/ApplyPage.css';
 
@@ -21,6 +23,10 @@ export default function ApplyPage() {
 
   const authToken = localStorage.getItem('authToken');
 
+  // Name validation regex (only letters, no numbers or special characters)
+  const nameRegex = /^[a-zA-Z]+$/;
+  const mobileNumberRegex = /^[0-9]{10}$/;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -39,16 +45,25 @@ export default function ApplyPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate first and last names to ensure no numbers or special characters
+    if (!nameRegex.test(formData.firstName)) {
+      toast.error('First name can only contain letters.');
+      return;
+    }
+    if (!nameRegex.test(formData.lastName)) {
+      toast.error('Last name can only contain letters.');
+      return;
+    }
+
     // Validate mobile number to be exactly 10 digits
-    const mobileNumberRegex = /^[0-9]{10}$/;
     if (!mobileNumberRegex.test(formData.mobileNumber)) {
-      alert('Mobile number must be exactly 10 digits.');
+      toast.error('Mobile number must be exactly 10 digits.');
       return;
     }
 
     // Check if the user is authenticated
     if (!authToken) {
-      alert('You must be logged in to submit the application.');
+      toast.error('You must be logged in to submit the application.');
       return;
     }
 
@@ -76,7 +91,7 @@ export default function ApplyPage() {
         },
       });
 
-      alert('Application submitted successfully!');
+      toast.success('Application submitted successfully!');
       console.log(response.data);
 
       // Redirect to payment page with formData after successful submission
@@ -84,13 +99,13 @@ export default function ApplyPage() {
     } catch (error) {
       if (error.response) {
         console.error('Error submitting application:', error.response.data);
-        alert(`Error: ${error.response.data.error || 'Error submitting application. Please try again.'}`);
+        toast.error(`Error: ${error.response.data.error || 'Error submitting application. Please try again.'}`);
       } else if (error.request) {
         console.error('Error submitting application: No response from server.');
-        alert('Error submitting application: No response from server.');
+        toast.error('Error submitting application: No response from server.');
       } else {
         console.error('Error submitting application:', error.message);
-        alert('Error submitting application. Please try again.');
+        toast.error('Error submitting application. Please try again.');
       }
     }
   };
@@ -220,6 +235,9 @@ export default function ApplyPage() {
             <button type="submit" className="btn btn-primary">Submit</button>
           </div>
         </form>
+
+        {/* Toast container */}
+        <ToastContainer />
       </div>
     </div>
   );
