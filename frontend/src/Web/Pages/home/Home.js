@@ -16,15 +16,15 @@ export default function Home() {
       {/* Main Features Section */}
       <div class="main-feature-section">
         <div class="feature">
-          <img src="/Assets/Icons/fast_benfit.svg" alt="Feature 1" class="feature-icon" />
+          <img src="Assets/Icons/fast_benfit.svg" alt="Feature 1" class="feature-icon" />
           <h3 className='feature_h3'>Top Universitys</h3>
         </div>
         <div class="feature">
-          <img src="/Assets/Icons/clipboard_benfit.svg" alt="Feature 2" class="feature-icon" />
+          <img src="Assets/Icons/clipboard_benfit.svg" alt="Feature 2" class="feature-icon" />
           <h3 className='feature_h3'>Seamless Application</h3>
         </div>
         <div class="feature">
-          <img src="/Assets/Icons/univeristy_benfit.svg" alt="Feature 3" class="feature-icon" />
+          <img src="Assets/Icons/univeristy_benfit.svg" alt="Feature 3" class="feature-icon" />
           <h3 className='feature_h3'>24/7 Support</h3>
         </div>
       </div>
