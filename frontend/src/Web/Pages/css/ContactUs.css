@@ -1,4 +1,4 @@
-/* Contact Us Page Styling */
+
 
 .contact-wrapper {
     background-color: #f4f4f4;
@@ -61,7 +61,7 @@
     margin-right: 15px;
   }
   
-  /* Responsiveness for smaller screens */
+  
   @media (max-width: 768px) {
     .contact-cards {
       flex-direction: column;

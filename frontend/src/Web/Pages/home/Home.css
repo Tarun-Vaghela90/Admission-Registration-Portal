@@ -4,7 +4,7 @@
     justify-content: flex-start;
     width: 100%;
     height: 100vh; /* Full height of the viewport */
-    background-image: url('./Man_with_Book_Hero_Section.jpg');
+    background-image: url('Man_with_Book_Hero_Section.jpg');
     background-size: cover;
     background-position: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
